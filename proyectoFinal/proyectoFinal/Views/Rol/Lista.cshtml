@@ -1,0 +1,29 @@
+﻿@model List<proyectoFinal.Models.Rol>;
+
+<div>
+	<div class="col-sm-8 offset-sn-2">
+        <h2>Lista Productos</h2>
+        <a asp-controller="Rol" asp-action="Nuevo" class="btn btn-success mb-3">Nuevo</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre Rol</th>
+                    <th>Descripcion</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.idRol</td>
+                        <td>@item.nombreRol</td>
+                        <td>@item.descripcion</td>
+                        <td></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+	</div>
+</div>
