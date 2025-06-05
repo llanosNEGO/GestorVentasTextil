@@ -1,0 +1,51 @@
+﻿@model IEnumerable<proyectoFinal.Models.Inventario>
+@{
+    ViewData["Title"] = "Inventario del Producto";
+    var producto = ViewBag.Producto as proyectoFinal.Models.Producto;
+}
+
+<h2>Inventario de @producto.nombreProducto</h2>
+
+@if (TempData["Exito"] != null)
+{
+    <div class="alert alert-success">@TempData["Exito"]</div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<p>
+    <a asp-action="Agregar" asp-route-idProducto="@producto.IdProducto" class="btn btn-primary">
+        Agregar Nuevo Inventario
+    </a>
+    <a asp-action="Lista" asp-controller="Producto" class="btn btn-secondary">
+        Volver a Productos
+    </a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Talla</th>
+            <th>Color</th>
+            <th>Cantidad</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.talla)</td>
+                <td>@Html.DisplayFor(modelItem => item.color)</td>
+                <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@item.idInventario" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Eliminar" asp-route-id="@item.idInventario" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

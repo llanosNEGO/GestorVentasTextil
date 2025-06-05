@@ -12,7 +12,7 @@ namespace proyectoFinal.Models
         [StringLength(50),Required]
         public string descripcionProducto { get; set; }
         [Required]
-        public decimal? precioProducto { get; set; }
+        public decimal precioProducto { get; set; }
 
         //FK
 

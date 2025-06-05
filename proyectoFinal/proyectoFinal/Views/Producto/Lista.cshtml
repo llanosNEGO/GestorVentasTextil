@@ -1,30 +1,34 @@
 ﻿@model List<proyectoFinal.Models.Producto>;
-<div>
-	<div class="col-sm-8 offset-sn-2">
-        <h2>Lista Productos</h2>
-        <a asp-controller="Producto" asp-action="Nuevo" class="btn btn-success mb-3">Nuevo</a>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre Producto</th>
-                    <th>Descripcion</th>
-                    <th>Precio</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@item.IdProducto</td>
-                        <td>@item.nombreProducto</td>
-                        <td>@item.descripcionProducto</td>
-                        <td>@item.precioProducto</td
-                        <td></td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-	</div>
-</div>
+
+<h2>Lista Productos</h2>
+<p>
+    <a asp-controller="Producto" asp-action="Nuevo" class="btn btn-success mb-3">
+        Nuevo
+    </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre Producto</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Inventario</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.IdProducto)</td>
+                <td>@Html.DisplayFor(modelItem => item.nombreProducto)</td>
+                <td>@Html.DisplayFor(modelItem => item.descripcionProducto)</td>
+                <td>@Html.DisplayFor(modelItem => item.precioProducto)</td>
+                <td>
+                    <a asp-action="Lista" asp-controller="Inventario" asp-route-id="@item.IdProducto" class="btn btn-sm btn-warning">Ver Inventario</a>
+                </td>
+                        
+            </tr>
+        }
+    </tbody>
+</table>

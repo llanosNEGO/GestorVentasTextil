@@ -1,0 +1,39 @@
+﻿@model proyectoFinal.Models.Inventario
+@{
+    ViewData["Title"] = "Agregar al Inventario";
+    var producto = ViewBag.Producto as proyectoFinal.Models.Producto;
+}
+
+<h2>Agregar variación a @producto.nombreProducto</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Agregar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="idProducto" />
+
+            <div class="form-group">
+                <label asp-for="talla" class="control-label"></label>
+                <input asp-for="talla" class="form-control" />
+                <span asp-validation-for="talla" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="color" class="control-label"></label>
+                <input asp-for="color" class="form-control" />
+                <span asp-validation-for="color" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Cantidad" class="control-label"></label>
+                <input asp-for="Cantidad" class="form-control" />
+                <span asp-validation-for="Cantidad" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <a asp-action="Lista" asp-route-id="@Model.idProducto" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
