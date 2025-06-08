@@ -41,9 +41,7 @@ namespace proyectoFinal.Controllers
                 }
 
                 // 3. SelectList seguro (patrón probado en Playlist)
-                ViewBag.Categorias = new SelectList(categorias,
-                    nameof(Categoria.idCategoria),
-                    nameof(Categoria.nombreCategoria));
+                ViewBag.Categorias = new SelectList(categorias, "idCategoria", "nombreCategoria");
 
                 // 4. Modelo inicializado (evita null reference)
                 return View(new Producto());
@@ -99,6 +97,7 @@ namespace proyectoFinal.Controllers
                         nombreProducto = producto.nombreProducto,
                         descripcionProducto = producto.descripcionProducto,
                         precioProducto = producto.precioProducto,
+                        stock = producto.stock,
                         idCategoria = producto.idCategoria
                     };
 

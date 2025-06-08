@@ -17,9 +17,7 @@ namespace proyectoFinal.Models
 
         //FK
 
-        [ForeignKey("DetalleVenta")]
-        public DetalleVenta detalleVenta { get; set; }
-        public int idDetalle { get; set; }
+        public ICollection<DetalleVenta> detalles { get; set; }
 
         [ForeignKey("Cliente")]
         public Cliente cliente { get; set; }
@@ -29,8 +27,5 @@ namespace proyectoFinal.Models
         public MedioPago medioPago { get; set; }
         public int idMedioPago { get; set; }
 
-        [ForeignKey("Usuario")]
-        public Usuario usuario { get; set; }
-        public int idUsuario { get; set; }
     }
 }

@@ -13,6 +13,7 @@
             <th>Nombre Producto</th>
             <th>Descripcion</th>
             <th>Precio</th>
+            <th>Stock</th>
             <th>Inventario</th>
         </tr>
     </thead>
@@ -24,6 +25,7 @@
                 <td>@Html.DisplayFor(modelItem => item.nombreProducto)</td>
                 <td>@Html.DisplayFor(modelItem => item.descripcionProducto)</td>
                 <td>@Html.DisplayFor(modelItem => item.precioProducto)</td>
+                <td>@Html.DisplayFor(modelItem => item.stock)</td>
                 <td>
                     <a asp-action="Lista" asp-controller="Inventario" asp-route-id="@item.IdProducto" class="btn btn-sm btn-warning">Ver Inventario</a>
                 </td>

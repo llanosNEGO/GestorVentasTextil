@@ -30,6 +30,7 @@ namespace proyectoFinal.Data
             modelBuilder.Entity<ComprasProveedor>(tb =>
             {
                 tb.HasOne(tb => tb.proveedor).WithMany(tb => tb.comprasProveedors).HasForeignKey(tb => tb.idProveedor);
+                tb.HasOne(tb => tb.medioPago).WithMany(tb=> tb.comprasProveedores).HasForeignKey(tb => tb.idmedioPago);
             });
             modelBuilder.Entity<ComprasProveedor>().ToTable("ComprasProveedores");
             modelBuilder.Entity<DetalleCompra>(tb =>
@@ -41,6 +42,7 @@ namespace proyectoFinal.Data
             modelBuilder.Entity<DetalleVenta>(tb =>
             {
                 tb.HasOne(tb => tb.Producto).WithMany(tb => tb.detalleVentas).HasForeignKey(tb => tb.idProducto);
+                tb.HasOne(tb => tb.venta).WithMany(tb => tb.detalles).HasForeignKey(tb => tb.idVenta);
             });
             modelBuilder.Entity<DetalleVenta>().ToTable("DetalleVenta");
 
@@ -65,10 +67,8 @@ namespace proyectoFinal.Data
             });            modelBuilder.Entity<Usuario>().ToTable("Usuario");
             modelBuilder.Entity<Venta>(tb =>
             {
-                tb.HasOne(tb => tb.detalleVenta).WithMany(tb => tb.ventas).HasForeignKey(tb => tb.idDetalle);
                 tb.HasOne(tb => tb.cliente).WithMany(tb => tb.ventas).HasForeignKey( tb => tb.idCliente);
                 tb.HasOne(tb => tb.medioPago).WithMany(tb=>tb.ventas).HasForeignKey( tb=>tb.idMedioPago);
-                tb.HasOne(tb => tb.usuario).WithMany(tb => tb.ventas).HasForeignKey( tb => tb.idUsuario);
             });
         }
 

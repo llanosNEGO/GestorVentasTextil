@@ -16,6 +16,9 @@ namespace proyectoFinal.Models
         [StringLength(50) , Required]
         public string talla { get; set; }
 
+        [Required]
+        public decimal subtotal { get; set; }
+
         //FK
         [ForeignKey("idCompras")]
         public ComprasProveedor ComprasProveedor { get; set; }

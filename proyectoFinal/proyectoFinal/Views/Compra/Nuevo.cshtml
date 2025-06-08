@@ -1,0 +1,169 @@
+﻿@model proyectoFinal.ViewM.CompraVM
+
+@{
+    ViewData["Title"] = "Nueva Compra";
+    var productos = ViewBag.Productos as List<Producto>;
+}
+
+<div class="container">
+    <h2>@ViewData["Title"]</h2>
+    <hr />
+
+    <form asp-action="Nuevo" id="compraForm">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="fecha_registro" class="control-label"></label>
+                    <input asp-for="fecha_registro" class="form-control" readonly />
+                    <span asp-validation-for="fecha_registro" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="idProveedor" class="control-label"></label>
+                    <select asp-for="idProveedor" asp-items="@ViewBag.Proveedores" class="form-control">
+                        <option value="">Seleccione un cliente</option>
+                    </select>
+                    <span asp-validation-for="idProveedor" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="idmedioPado" class="control-label"></label>
+                    <select asp-for="idmedioPado" asp-items="@ViewBag.MediosPago" class="form-control">
+                        <option value="">Seleccione medio de pago</option>
+                    </select>
+                    <span asp-validation-for="idmedioPado" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <h4>Detalles de Compra</h4>
+        <table class="table" id="detallesTable">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Color</th>
+                    <th>Talla</th>
+                    <th>Precio Unitario</th>
+                    <th>Subtotal</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.detalles != null && Model.detalles.Count > 0)
+                {
+
+                    @for (int i = 0; i < Model.detalles.Count; i++)
+                    {
+                        <tr>
+                            <td>
+                                <select asp-for="detalles[i].idProducto" class="form-control producto-select">
+                                    <option value="">Seleccione producto</option>
+                                    @foreach (var producto in productos)
+                                    {
+                                        <option value="@producto.IdProducto" data-precio="@producto.precioProducto">
+                                            @producto.nombreProducto
+                                        </option>
+                                    }
+                                </select>
+                                <span asp-validation-for="detalles[i].idProducto" class="text-danger"></span>
+                            </td>
+                            <td>
+                                <input asp-for="detalles[i].cantidad" class="form-control cantidad" />
+                                <span asp-validation-for="detalles[i].cantidad" class="text-danger"></span>
+                            </td>
+                            <td>
+                                <input asp-for="detalles[i].color" class="form-control color" />
+                                <span asp-validation-for="detalles[i].color" class="text-danger"></span>
+                            </td>
+                            <td>
+                                <input asp-for="detalles[i].talla" class="form-control talla" />
+                                <span asp-validation-for="detalles[i].talla" class="text-danger"></span>
+                            </td>
+                            <td>
+                                <input asp-for="detalles[i].precioUnitario" class="form-control precioUnitario" readonly />
+                            </td>
+                            <td>
+                                <input asp-for="detalles[i].subtotal" class="form-control subtotal" readonly />
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-remove">Eliminar</button>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+
+        <button type="button" id="addDetail" class="btn btn-primary mb-3">Agregar Producto</button>
+
+        <div class="form-group">
+            <label>Total: </label>
+            <span id="totalVenta">0.00</span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Guardar Venta" class="btn btn-success" />
+            <a asp-action="Lista" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // Agregar nuevo detalle
+            $("#addDetail").click(function() {
+                $.ajax({
+                    url: '@Url.Action("ObtenerFilaDetalleC")',
+                    success: function(data) {
+                        $("#detallesTable tbody").append(data);
+                        actualizarTotal();
+                    }
+                });
+            });
+
+            // Eliminar detalle
+            $(document).on("click", ".btn-remove", function() {
+                $(this).closest("tr").remove();
+                actualizarTotal();
+            });
+
+            // Cambio de producto
+            $(document).on("change", ".producto-select", function() {
+                var productoId = $(this).val();
+                var $row = $(this).closest("tr");
+
+                if (productoId) {
+                    $.get('@Url.Action("ObtenerPrecioProducto")', { id: productoId }, function(data) {
+                        $row.find(".precioUnitario").val(data.precio);
+                        calcularSubtotal($row);
+                    });
+                }
+            });
+
+            // Cambio de cantidad
+            $(document).on("change", ".cantidad", function() {
+                calcularSubtotal($(this).closest("tr"));
+            });
+
+            function calcularSubtotal($row) {
+                var cantidad = parseFloat($row.find(".cantidad").val()) || 0;
+                var precio = parseFloat($row.find(".precioUnitario").val()) || 0;
+                var subtotal = cantidad * precio;
+                $row.find(".subtotal").val(subtotal.toFixed(2));
+                actualizarTotal();
+            }
+
+            function actualizarTotal() {
+                var total = 0;
+                $(".subtotal").each(function() {
+                    total += parseFloat($(this).val()) || 0;
+                });
+                $("#totalVenta").text(total.toFixed(2));
+            }
+        });
+    </script>
+}

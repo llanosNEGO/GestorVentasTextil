@@ -36,6 +36,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxOdWV2by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Abed/OneDrive/Documentos/UPN/Soluciones y arquitectura/proyectoFinal/proyectoFinal/Views/Compra/Detalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhXERldGFsbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abed/OneDrive/Documentos/UPN/Soluciones y arquitectura/proyectoFinal/proyectoFinal/Views/Compra/DetalleCompraRow.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhXERldGFsbGVDb21wcmFSb3cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abed/OneDrive/Documentos/UPN/Soluciones y arquitectura/proyectoFinal/proyectoFinal/Views/Compra/Lista.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhXExpc3RhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abed/OneDrive/Documentos/UPN/Soluciones y arquitectura/proyectoFinal/proyectoFinal/Views/Compra/Nuevo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhXE51ZXZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Abed/OneDrive/Documentos/UPN/Soluciones y arquitectura/proyectoFinal/proyectoFinal/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -82,6 +98,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Abed/OneDrive/Documentos/UPN/Soluciones y arquitectura/proyectoFinal/proyectoFinal/Views/Usuario/Lista.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xMaXN0YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abed/OneDrive/Documentos/UPN/Soluciones y arquitectura/proyectoFinal/proyectoFinal/Views/Venta/Detalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVudGFcRGV0YWxsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abed/OneDrive/Documentos/UPN/Soluciones y arquitectura/proyectoFinal/proyectoFinal/Views/Venta/DetalleVentaRow.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVudGFcRGV0YWxsZVZlbnRhUm93LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abed/OneDrive/Documentos/UPN/Soluciones y arquitectura/proyectoFinal/proyectoFinal/Views/Venta/Lista.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVudGFcTGlzdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abed/OneDrive/Documentos/UPN/Soluciones y arquitectura/proyectoFinal/proyectoFinal/Views/Venta/Nuevo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVudGFcTnVldm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Abed/OneDrive/Documentos/UPN/Soluciones y arquitectura/proyectoFinal/proyectoFinal/Views/_ViewImports.cshtml]

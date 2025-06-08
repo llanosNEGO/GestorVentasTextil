@@ -12,8 +12,8 @@ using proyectoFinal.Data;
 namespace proyectoFinal.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20250604190238_primera migracion")]
-    partial class primeramigracion
+    [Migration("20250607203416_2")]
+    partial class _2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -158,10 +158,16 @@ namespace proyectoFinal.Migrations
                     b.Property<int>("Produto")
                         .HasColumnType("int");
 
+                    b.Property<int>("Venta")
+                        .HasColumnType("int");
+
                     b.Property<int>("cantidad")
                         .HasColumnType("int");
 
                     b.Property<int>("idProducto")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idVenta")
                         .HasColumnType("int");
 
                     b.Property<decimal>("precio_unitario")
@@ -175,6 +181,8 @@ namespace proyectoFinal.Migrations
                     b.HasKey("idDetalle");
 
                     b.HasIndex("idProducto");
+
+                    b.HasIndex("idVenta");
 
                     b.ToTable("DetalleVenta", (string)null);
                 });
@@ -257,6 +265,9 @@ namespace proyectoFinal.Migrations
 
                     b.Property<decimal>("precioProducto")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("stock")
+                        .HasColumnType("int");
 
                     b.HasKey("IdProducto");
 
@@ -356,13 +367,7 @@ namespace proyectoFinal.Migrations
                     b.Property<int>("Cliente")
                         .HasColumnType("int");
 
-                    b.Property<int>("DetalleVenta")
-                        .HasColumnType("int");
-
                     b.Property<int>("MedioPago")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Usuario")
                         .HasColumnType("int");
 
                     b.Property<bool>("estado")
@@ -374,13 +379,7 @@ namespace proyectoFinal.Migrations
                     b.Property<int>("idCliente")
                         .HasColumnType("int");
 
-                    b.Property<int>("idDetalle")
-                        .HasColumnType("int");
-
                     b.Property<int>("idMedioPago")
-                        .HasColumnType("int");
-
-                    b.Property<int>("idUsuario")
                         .HasColumnType("int");
 
                     b.Property<decimal>("total")
@@ -391,11 +390,7 @@ namespace proyectoFinal.Migrations
 
                     b.HasIndex("idCliente");
 
-                    b.HasIndex("idDetalle");
-
                     b.HasIndex("idMedioPago");
-
-                    b.HasIndex("idUsuario");
 
                     b.ToTable("Ventas");
                 });
@@ -438,7 +433,15 @@ namespace proyectoFinal.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("proyectoFinal.Models.Venta", "venta")
+                        .WithMany("detalles")
+                        .HasForeignKey("idVenta")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Producto");
+
+                    b.Navigation("venta");
                 });
 
             modelBuilder.Entity("proyectoFinal.Models.Inventario", b =>
@@ -482,31 +485,15 @@ namespace proyectoFinal.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("proyectoFinal.Models.DetalleVenta", "detalleVenta")
-                        .WithMany("ventas")
-                        .HasForeignKey("idDetalle")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("proyectoFinal.Models.MedioPago", "medioPago")
                         .WithMany("ventas")
                         .HasForeignKey("idMedioPago")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("proyectoFinal.Models.Usuario", "usuario")
-                        .WithMany("ventas")
-                        .HasForeignKey("idUsuario")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("cliente");
 
-                    b.Navigation("detalleVenta");
-
                     b.Navigation("medioPago");
-
-                    b.Navigation("usuario");
                 });
 
             modelBuilder.Entity("proyectoFinal.Models.Categoria", b =>
@@ -522,11 +509,6 @@ namespace proyectoFinal.Migrations
             modelBuilder.Entity("proyectoFinal.Models.ComprasProveedor", b =>
                 {
                     b.Navigation("detalleCompras");
-                });
-
-            modelBuilder.Entity("proyectoFinal.Models.DetalleVenta", b =>
-                {
-                    b.Navigation("ventas");
                 });
 
             modelBuilder.Entity("proyectoFinal.Models.MedioPago", b =>
@@ -553,9 +535,9 @@ namespace proyectoFinal.Migrations
                     b.Navigation("usuarios");
                 });
 
-            modelBuilder.Entity("proyectoFinal.Models.Usuario", b =>
+            modelBuilder.Entity("proyectoFinal.Models.Venta", b =>
                 {
-                    b.Navigation("ventas");
+                    b.Navigation("detalles");
                 });
 #pragma warning restore 612, 618
         }

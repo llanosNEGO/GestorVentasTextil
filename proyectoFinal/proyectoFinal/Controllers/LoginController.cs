@@ -73,12 +73,25 @@ namespace proyectoFinal.Controllers
         {
             if (!ModelState.IsValid)
             {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                foreach (var error in errors)
+                {
+
+                    Console.WriteLine($"Error producido {error.ErrorMessage}");
+                }
+                Console.WriteLine("Error de Formulario");
+                ViewData["Mensaje"] = "Por favor complete todos los campos requeridos correctamente";
                 return View(usuario);
             }
             var usuarioEncontrado = await _dbContext.Usuarios.FirstOrDefaultAsync(a => a.nombreUsuario == usuario.nombreUsuario &&
                 a.password == usuario.password);
 
-            if(usuarioEncontrado == null) { ViewData["Mensaje"] = "Nombre o Contraseña son incorrectos"; return View(usuario); }
+            if(usuarioEncontrado == null)
+            {
+                Console.Write("Datos Ingresados son Incorrectos");
+                ViewData["Mensaje"] = "Nombre o Contraseña son incorrectos";
+                return View(usuario); 
+            }
 
             var claims = new List<Claim>
             {
@@ -97,7 +110,7 @@ namespace proyectoFinal.Controllers
 
             await HttpContext.SignInAsync(
                 CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
-            return RedirectToAction("Lista", "Produco");
+            return RedirectToAction("Index", "Home");
         }
 
 

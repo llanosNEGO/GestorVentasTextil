@@ -13,6 +13,8 @@ namespace proyectoFinal.Models
         public string descripcionProducto { get; set; }
         [Required]
         public decimal precioProducto { get; set; }
+        [Required]
+        public int stock { get; set; }
 
         //FK
 

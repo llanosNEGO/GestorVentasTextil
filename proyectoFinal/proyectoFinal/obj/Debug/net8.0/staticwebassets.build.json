@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VpNa9FIZGfCirPijEvpT5uA0Iyitc8kWX8UTb3YnYIg=",
+  "Hash": "sqguRoaL7zNSXqeta+EI3C3yIGBiR41y1diwfSQDpIg=",
   "Source": "proyectoFinal",
   "BasePath": "_content/proyectoFinal",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c2tiyv64ts",
-      "Integrity": "pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=",
+      "Fingerprint": "xzsba3zbqk",
+      "Integrity": "c3Lh4xn5SQWN+34+uB9wkmyPJNFMFvTfb3Q14PHh26Q=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -136,8 +136,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "mpyigms19s",
-      "Integrity": "xlexqj9/k3uobVwGfciZcj/eDdooaNgcf4OFLtLUygM=",
+      "Fingerprint": "k9y2yc75ev",
+      "Integrity": "+NuzJz7qSEAcD/mDL2+wwEOPLQak9OKbp8ZMxdc4u4I=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
@@ -1321,51 +1321,6 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.c2tiyv64ts.css",
-      "AssetFile": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "362"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 11:07:42 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "c2tiyv64ts"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1376,7 +1331,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "407"
         },
         {
           "Name": "Content-Type",
@@ -1384,11 +1339,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"c3Lh4xn5SQWN+34+uB9wkmyPJNFMFvTfb3Q14PHh26Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 11:07:42 GMT"
+          "Value": "Sun, 08 Jun 2025 08:53:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1398,7 +1353,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-c3Lh4xn5SQWN+34+uB9wkmyPJNFMFvTfb3Q14PHh26Q="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.xzsba3zbqk.css",
+      "AssetFile": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "407"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c3Lh4xn5SQWN+34+uB9wkmyPJNFMFvTfb3Q14PHh26Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 08 Jun 2025 08:53:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xzsba3zbqk"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-c3Lh4xn5SQWN+34+uB9wkmyPJNFMFvTfb3Q14PHh26Q="
         }
       ]
     },
@@ -1577,7 +1577,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "204136"
+          "Value": "204121"
         },
         {
           "Name": "Content-Type",
@@ -1585,11 +1585,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"xlexqj9/k3uobVwGfciZcj/eDdooaNgcf4OFLtLUygM=\""
+          "Value": "\"+NuzJz7qSEAcD/mDL2+wwEOPLQak9OKbp8ZMxdc4u4I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 11:07:43 GMT"
+          "Value": "Sun, 08 Jun 2025 08:50:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1599,7 +1599,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-xlexqj9/k3uobVwGfciZcj/eDdooaNgcf4OFLtLUygM="
+          "Value": "sha256-+NuzJz7qSEAcD/mDL2+wwEOPLQak9OKbp8ZMxdc4u4I="
         }
       ]
     },
@@ -1682,6 +1682,51 @@
         {
           "Name": "integrity",
           "Value": "sha256-DRvWr0gangj5/5Q3DRn6ttzpcWDzl3OpHoAwAzNDR5Q="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.k9y2yc75ev.css",
+      "AssetFile": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "204121"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+NuzJz7qSEAcD/mDL2+wwEOPLQak9OKbp8ZMxdc4u4I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 08 Jun 2025 08:50:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k9y2yc75ev"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+NuzJz7qSEAcD/mDL2+wwEOPLQak9OKbp8ZMxdc4u4I="
         }
       ]
     },
@@ -1846,51 +1891,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.mpyigms19s.css",
-      "AssetFile": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "204136"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"xlexqj9/k3uobVwGfciZcj/eDdooaNgcf4OFLtLUygM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 04 Jun 2025 11:07:43 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "mpyigms19s"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/bootstrap/dist/css/bootstrap.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-xlexqj9/k3uobVwGfciZcj/eDdooaNgcf4OFLtLUygM="
         }
       ]
     },

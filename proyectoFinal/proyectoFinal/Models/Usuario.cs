@@ -22,6 +22,5 @@ namespace proyectoFinal.Models
         public Rol rol {  get; set; }
         public int idRol { get; set; }
 
-        public ICollection<Venta> ventas { get; set; }
     }
 }

@@ -11,6 +11,7 @@ namespace proyectoFinal.Models
         public string nombre {  get; set; }
         //FK
         public ICollection<Venta> ventas { get; set; }
+        public ICollection<ComprasProveedor> comprasProveedores { get; set; }
 
     }
 }

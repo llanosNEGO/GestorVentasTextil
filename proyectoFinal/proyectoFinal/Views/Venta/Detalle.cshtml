@@ -1,0 +1,68 @@
+﻿@model proyectoFinal.Models.Venta
+
+
+<div class="container">
+    <h1 class="mt-4">@ViewData["Title"]</h1>
+
+    <div class="card">
+        <div class="card-header">
+            <h4>Información General</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">ID Venta:</dt>
+                <dd class="col-sm-9">@Model.idVenta</dd>
+
+                <dt class="col-sm-3">Fecha:</dt>
+                <dd class="col-sm-9">@Model.fecha_registro.ToString()</dd>
+
+                <dt class="col-sm-3">Cliente:</dt>
+                <dd class="col-sm-9">@Model.cliente?.nombreCliente</dd>
+
+                <dt class="col-sm-3">Medio de Pago:</dt>
+                <dd class="col-sm-9">@Model.medioPago?.nombre</dd>
+
+                <dt class="col-sm-3">Total:</dt>
+                <dd class="col-sm-9">@Model.total.ToString("0.00")</dd>
+
+                <dt class="col-sm-3">Estado:</dt>
+                <dd class="col-sm-9">@(Model.estado ? "Activa" : "Anulada")</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-header">
+            <h4>Productos Vendidos</h4>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var detalle in Model.detalles)
+                    {
+                        <tr>
+                            <td>@detalle.Producto?.nombreProducto</td>
+                            <td>@detalle.cantidad</td>
+                            <td>@detalle.precio_unitario.ToString("0.00")</td>
+                            <td>@detalle.subtotal.ToString("0.00")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <a asp-action="Lista" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Volver a la lista
+        </a>
+    </div>
+</div>

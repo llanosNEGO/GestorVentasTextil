@@ -21,6 +21,10 @@ namespace proyectoFinal.Models
         public Proveedor proveedor { get; set; }
         public int idProveedor { get; set; }
 
+        [ForeignKey("MedioPago")]
+        public MedioPago medioPago { get; set; }
+        public int idmedioPago { get; set; }
+
         public ICollection<DetalleCompra> detalleCompras { get; set; }
 
     }

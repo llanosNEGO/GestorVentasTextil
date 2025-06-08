@@ -16,10 +16,13 @@ namespace proyectoFinal.Models
         public decimal subtotal { get; set; }
 
         //FK
-        public ICollection<Venta> ventas { get; set; }
 
         [ForeignKey("Produto")]
         public Producto Producto { get; set; }
         public int idProducto { get; set; }
+
+        [ForeignKey("Venta")]
+        public Venta venta { get; set; }
+        public int idVenta { get; set; }
     }
 }
