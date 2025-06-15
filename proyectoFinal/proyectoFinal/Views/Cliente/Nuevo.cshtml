@@ -5,29 +5,28 @@
 }
 
 @model proyectoFinal.Models.Cliente;
-<div>
-    <div class="col-sm-8 offset-sm-2">
-        <h2>Nuevo Cliente</h2>
-        <form asp-controller="Cliente" asp-action="Nuevo" method="post">
-            <div class="form-group">
-                <label asp-for="nombreCliente"></label>
-                <input asp-for="nombreCliente" class="form-control" />
-                <span asp-validation-for="nombreCliente" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="telefono"></label>
-                <input asp-for="telefono" class="form-control" />
-                <span asp-validation-for="telefono" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="email"></label>
-                <input asp-for="email"type="text" class="form-control" />
-                <span asp-validation-for="email" class="text-danger"></span>
-            </div
-            <div class="mb-3">
-                <button class="btn btn-primary">Guardar</button>
-            </div>
+
+<div class="form-container">
+    <h2>Nuevo Cliente</h2>
+    <form asp-controller="Cliente" asp-action="Nuevo" method="post">
+        <div class="form-group">
+            <label>Nombre CLiente</label>
+            <input asp-for="nombreCliente" class="form-control" />
+            <span asp-validation-for="nombreCliente" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label>Telefono</label>
+            <input asp-for="telefono" class="form-control" />
+            <span asp-validation-for="telefono" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input asp-for="email"type="text" class="form-control" />
+            <span asp-validation-for="email" class="text-danger"></span>
+        </div>
+        <div class="form-actions">
+            <button class="btn btn-primary">Guardar</button>
             <a asp-controller="Cliente" asp-action="Lista" class="btn btn-warning">Volver</a>
-        </form>
-    </div>
+        </div>
+    </form>
 </div>

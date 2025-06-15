@@ -1,8 +1,12 @@
 ﻿@model List<proyectoFinal.Models.Cliente>;
 
+@{
+    ViewData["Title"] = "Lista Cliente";
+    Layout = "_Layout";
+}
 <h2>Lista Clientes</h2>
 <p>
-    <a asp-controller="Cliente" asp-action="Nuevo" class="btn btn-success mb-3">
+    <a asp-controller="Cliente" asp-action="Nuevo" class="btn btn-primary m-3">
         Nuevo
     </a>
 </p>
@@ -24,7 +28,14 @@
                 <td>@Html.DisplayFor(modelItem => item.nombreCliente)</td>
                 <td>@Html.DisplayFor(modelItem => item.telefono)</td>
                 <td>@Html.DisplayFor(modelItem => item.email)</td>
-                <td></td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@item.idCliente" class="btn btn-sm btn-warning">Editar</a>
+                    
+                </td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@item.idCliente" class="btn btn-sm btn-warning">Editar</a>
+
+                </td>
             </tr>
         }
     </tbody>

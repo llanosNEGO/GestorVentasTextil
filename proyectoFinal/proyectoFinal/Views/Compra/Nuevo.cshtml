@@ -5,41 +5,38 @@
     var productos = ViewBag.Productos as List<Producto>;
 }
 
-<div class="container">
-    <h2>@ViewData["Title"]</h2>
-    <hr />
+<div class="form-container-enhanced">
+    <h2>Nueva Compra</h2>
 
     <form asp-action="Nuevo" id="compraForm">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label asp-for="fecha_registro" class="control-label"></label>
-                    <input asp-for="fecha_registro" class="form-control" readonly />
-                    <span asp-validation-for="fecha_registro" class="text-danger"></span>
-                </div>
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Fecha de Registro</label>
+                <input asp-for="fecha_registro" class="form-fecha" readonly />
+                <span asp-validation-for="fecha_registro" class="text-danger"></span>
+            </div>
 
-                <div class="form-group">
-                    <label asp-for="idProveedor" class="control-label"></label>
-                    <select asp-for="idProveedor" asp-items="@ViewBag.Proveedores" class="form-control">
-                        <option value="">Seleccione un cliente</option>
-                    </select>
-                    <span asp-validation-for="idProveedor" class="text-danger"></span>
-                </div>
+            <div class="form-group">
+                <label>Proveedor</label>
+                <select asp-for="idProveedor" asp-items="@ViewBag.Proveedores" class="form-control">
+                    <option value="">Seleccione un cliente</option>
+                </select>
+                <span asp-validation-for="idProveedor" class="text-danger"></span>
+            </div>
 
-                <div class="form-group">
-                    <label asp-for="idmedioPado" class="control-label"></label>
-                    <select asp-for="idmedioPado" asp-items="@ViewBag.MediosPago" class="form-control">
-                        <option value="">Seleccione medio de pago</option>
-                    </select>
-                    <span asp-validation-for="idmedioPado" class="text-danger"></span>
-                </div>
+            <div class="form-group">
+                <label>Medio Pago</label>
+                <select asp-for="idmedioPado" asp-items="@ViewBag.MediosPago" class="form-control">
+                    <option value="">Seleccione medio de pago</option>
+                </select>
+                <span asp-validation-for="idmedioPado" class="text-danger"></span>
             </div>
         </div>
 
-        <h4>Detalles de Compra</h4>
-        <table class="table" id="detallesTable">
+        <h2 class="section-header">Detalles de la Compra</h2>
+        <table class="table-form" id="detallesTable">
             <thead>
                 <tr>
                     <th>Producto</th>
@@ -83,10 +80,10 @@
                                 <span asp-validation-for="detalles[i].talla" class="text-danger"></span>
                             </td>
                             <td>
-                                <input asp-for="detalles[i].precioUnitario" class="form-control precioUnitario" readonly />
+                                <input asp-for="detalles[i].precioUnitario" class="form-fecha precioUnitario" readonly />
                             </td>
                             <td>
-                                <input asp-for="detalles[i].subtotal" class="form-control subtotal" readonly />
+                                <input asp-for="detalles[i].subtotal" class="form-fecha subtotal" readonly />
                             </td>
                             <td>
                                 <button type="button" class="btn btn-danger btn-remove">Eliminar</button>
@@ -96,17 +93,18 @@
                 }
             </tbody>
         </table>
-
-        <button type="button" id="addDetail" class="btn btn-primary mb-3">Agregar Producto</button>
-
-        <div class="form-group">
-            <label>Total: </label>
-            <span id="totalVenta">0.00</span>
+        <div class="floating-action-btn">
+            <button type="button" id="addDetail" class="btn btn-primary">Agregar Producto</button>
         </div>
 
-        <div class="form-group">
+
+        <div class="totals-section">
+            <label>Total: </label>
+            <span class="totals-display" id="totalVenta">0.00</span>
+        </div>
+        <div class="action-buttons">
+            <a asp-action="Lista" class="btn btn-danger ">Cancelar</a>
             <input type="submit" value="Guardar Venta" class="btn btn-success" />
-            <a asp-action="Lista" class="btn btn-secondary">Cancelar</a>
         </div>
     </form>
 </div>

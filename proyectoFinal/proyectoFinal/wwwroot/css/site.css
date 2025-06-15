@@ -17,7 +17,340 @@ html {
   min-height: 100%;
 }
 
+/* General body styles */
 body {
-    margin-bottom: 60px;
-    text-
+    background-color: #0b2956;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #12243e !important;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #d0d7e2 !important;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: #0d6efd !important;
+        text-decoration: underline;
+    }
+
+/* MAIN CONTENT */
+main {
+    margin-top: 1rem;
+    color:white;
+}
+
+
+/* BUTTONS */
+.btn-primary {
+    background-color: #085ed3;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+}
+
+    .btn-primary:hover {
+        background-color: #0b5ed7;
+    }
+/* BUTTONS */
+.btn-info {
+    background-color: #0d6efd;
+    border: none;
+    color:white;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+}
+
+    .btn-info:hover {
+        background-color: #0b5ed7;
+    }
+
+.form-fecha {
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    background-color: #e9f1ff;
+}
+/* FORMS */
+.form-control {
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    background-color: #e9f1ff;
+    border: 1px solid #ced4da;
+}
+
+
+/* HEADINGS */
+h1, h2, h3, h4, h5 {
+    color: #ffffff;
+}
+
+/* ALERTS */
+.alert-danger {
+    background-color: #dc3545;
+    border-color: #c82333;
+    color: white;
+}
+
+/* CUSTOM LINKS */
+a {
+    color: #0d6efd;
+}
+
+    a:hover {
+        color: #0b5ed7;
+        text-decoration: underline;
+    }
+/* TABLES STYLES */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #ffffff; /* Texto blanco para toda la tabla */
+    background-color: transparent;
+    border-collapse: collapse;
+}
+
+    .table th,
+    .table td {
+        padding: 0.75rem;
+        vertical-align: top;
+        border-top: 1px solid #495057;
+    }
+
+    .table thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #495057;
+        background-color: rgba(18, 36, 62, 0.7); /* Similar al navbar */
+        color: #ffffff;
+        font-weight: 600;
+    }
+
+    .table tbody tr:nth-child(odd) {
+        background-color: rgba(13, 41, 86, 0.5); /* Fondo más claro para filas impares */
+    }
+
+    .table tbody tr:nth-child(even) {
+        background-color: rgba(18, 36, 62, 0.5); /* Fondo un poco diferente para filas pares */
+    }
+
+    .table tbody tr:hover {
+        background-color: rgba(13, 110, 253, 0.2); /* Efecto hover */
+    }
+
+    /* Botones dentro de la tabla */
+    .table .btn {
+        margin-right: 5px;
+    }
+
+    /* Asegurar que los links en la tabla sean visibles */
+    .table a {
+        color: #4da3ff;
+    }
+
+        .table a:hover {
+            color: #80b9ff;
+            text-decoration: underline;
+        }
+
+/* FORMULARIO ESTILOS */
+.form-container {
+    margin: 2rem auto;
+    padding: 20px;
+    background-color: rgba(18, 36, 62, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(13, 110, 253, 0.2);
+}
+
+    .form-container h2 {
+        color: #ffffff;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #0d6efd;
+        text-align: center;
+    }
+
+.form-group {
+
+}
+
+    .form-group label {
+        color: #d0d7e2;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+
+.form-control {
+    background-color: rgba(233, 241, 255, 0.1);
+    border: 1px solid #495057;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+    .form-control:focus {
+        background-color: rgba(233, 241, 255, 0.2);
+        border-color: #0d6efd;
+        color: #ffffff;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+
+select.form-control {
+    background-color: rgba(233, 241, 255, 0.2);
+    color: black;
+}
+    select.form-control option {
+        color: #12243e !important;
+        background-color: #e9f1ff !important;
+        padding: 0.5rem !important;
+    }
+
+.text-danger {
+    color: #ff6b6b !important;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #495057;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border: none;
+    text-decoration: none;
+    color: #212529;
+}
+
+    .btn-warning:hover {
+        background-color: #e0a800;
+        color: #212529;
+    }
+/* ========== ESTILOS REUTILIZABLES PARA FORMULARIOS COMPLEJOS ========== */
+
+/* Contenedor principal mejorado */
+.form-container-enhanced {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: rgba(18, 36, 62, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(13, 110, 253, 0.3);
+}
+
+/* Encabezado de sección */
+.section-header {
+    color: #ffffff;
+    margin: 1.5rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid rgba(13, 110, 253, 0.5);
+    font-size: 1.4rem;
+}
+
+/* Grid para formularios de dos columnas */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Campos de formulario en modo tabla (para detalles) */
+.table-form {
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+    .table-form thead th {
+        background-color: rgba(13, 110, 253, 0.7);
+        padding: 1rem;
+        text-align: left;
+    }
+
+    .table-form tbody td {
+        padding: 0.75rem;
+        vertical-align: middle;
+    }
+
+    .table-form tbody tr:nth-child(even) {
+        background-color: rgba(18, 36, 62, 0.6);
+    }
+
+    .table-form tbody tr:hover {
+        background-color: rgba(13, 110, 253, 0.15);
+    }
+
+    /* Selectores en tablas */
+    .table-form select.form-control {
+        background-color: rgba(233, 241, 255, 0.15);
+        color: white;
+        min-width: 180px;
+    }
+
+    /* Campos numéricos en tablas */
+    .table-form .numeric-input {
+        max-width: 100px;
+    }
+
+/* Sección de totales */
+.totals-section {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: rgba(18, 36, 62, 0.7);
+    border-radius: 8px;
+    border-left: 4px solid #0d6efd;
+}
+
+.totals-display {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Botones de acción */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(13, 110, 253, 0.3);
+}
+
+/* Botones flotantes para agregar elementos */
+.floating-action-btn {
+    position: relative;
+    margin: 1rem 0;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .table-form {
+        display: block;
+        overflow-x: auto;
+    }
 }

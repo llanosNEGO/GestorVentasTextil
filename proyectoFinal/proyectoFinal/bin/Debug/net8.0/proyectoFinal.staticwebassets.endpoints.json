@@ -17,7 +17,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "407"
+          "Value": "7601"
         },
         {
           "Name": "Content-Type",
@@ -25,22 +25,22 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"c3Lh4xn5SQWN+34+uB9wkmyPJNFMFvTfb3Q14PHh26Q=\""
+          "Value": "\"NTBMMLI1n41sL4+3cGfe6bAghhfcJzpcAP904LOpjSE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 08 Jun 2025 08:53:39 GMT"
+          "Value": "Wed, 11 Jun 2025 12:32:51 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-c3Lh4xn5SQWN+34+uB9wkmyPJNFMFvTfb3Q14PHh26Q="
+          "Value": "sha256-NTBMMLI1n41sL4+3cGfe6bAghhfcJzpcAP904LOpjSE="
         }
       ]
     },
     {
-      "Route": "css/site.xzsba3zbqk.css",
+      "Route": "css/site.lowbqbhhy8.css",
       "AssetFile": "css/site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -54,7 +54,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "407"
+          "Value": "7601"
         },
         {
           "Name": "Content-Type",
@@ -62,21 +62,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"c3Lh4xn5SQWN+34+uB9wkmyPJNFMFvTfb3Q14PHh26Q=\""
+          "Value": "\"NTBMMLI1n41sL4+3cGfe6bAghhfcJzpcAP904LOpjSE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 08 Jun 2025 08:53:39 GMT"
+          "Value": "Wed, 11 Jun 2025 12:32:51 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xzsba3zbqk"
+          "Value": "lowbqbhhy8"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-c3Lh4xn5SQWN+34+uB9wkmyPJNFMFvTfb3Q14PHh26Q="
+          "Value": "sha256-NTBMMLI1n41sL4+3cGfe6bAghhfcJzpcAP904LOpjSE="
         },
         {
           "Name": "label",
@@ -245,6 +245,88 @@
         {
           "Name": "label",
           "Value": "js/site.js"
+        }
+      ]
+    },
+    {
+      "Route": "lib/Pallay.d7r5aihddb.jpg",
+      "AssetFile": "lib/Pallay.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1824"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+TrWpzsmizoJNKxcPGoNMIpLCxx/J34Wn8CTO6ZCIVo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Jun 2025 11:12:28 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "d7r5aihddb"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+TrWpzsmizoJNKxcPGoNMIpLCxx/J34Wn8CTO6ZCIVo="
+        },
+        {
+          "Name": "label",
+          "Value": "lib/Pallay.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "lib/Pallay.jpg",
+      "AssetFile": "lib/Pallay.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1824"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+TrWpzsmizoJNKxcPGoNMIpLCxx/J34Wn8CTO6ZCIVo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Jun 2025 11:12:28 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+TrWpzsmizoJNKxcPGoNMIpLCxx/J34Wn8CTO6ZCIVo="
         }
       ]
     },

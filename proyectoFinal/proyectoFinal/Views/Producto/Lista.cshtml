@@ -2,7 +2,7 @@
 
 <h2>Lista Productos</h2>
 <p>
-    <a asp-controller="Producto" asp-action="Nuevo" class="btn btn-success mb-3">
+    <a asp-controller="Producto" asp-action="Nuevo" class="btn btn-primary m-3">
         Nuevo
     </a>
 </p>
@@ -27,7 +27,7 @@
                 <td>@Html.DisplayFor(modelItem => item.precioProducto)</td>
                 <td>@Html.DisplayFor(modelItem => item.stock)</td>
                 <td>
-                    <a asp-action="Lista" asp-controller="Inventario" asp-route-id="@item.IdProducto" class="btn btn-sm btn-warning">Ver Inventario</a>
+                    <a asp-action="Lista" asp-controller="Inventario" asp-route-id="@item.IdProducto" class="btn btn-sm btn-info">Ver Inventario</a>
                 </td>
                         
             </tr>

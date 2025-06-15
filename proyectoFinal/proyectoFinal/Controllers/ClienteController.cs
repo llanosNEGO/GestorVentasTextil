@@ -94,6 +94,110 @@ namespace proyectoFinal.Controllers
             return View(cliente);
         }
 
+        //Acion Eliminar 
+        [HttpGet]
+        public async Task<IActionResult> Eliminar(int? id)
+        {
+            if (id == null) { return NotFound(); }
+
+            var cliente = await _appDBContext.Clientes.FirstOrDefaultAsync(d => d.idCliente == id);
+
+            if (cliente == null) { return NotFound(); }
+
+            return View(cliente);
+        }
+        [HttpPost, ActionName("Eliminar")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EliminarConfirmado( int id)
+        {
+            try
+            {
+                var cliente = await _appDBContext.Clientes.FindAsync(id);
+                if (cliente == null) { return NotFound(); }
+
+                bool tieneventas = await _appDBContext.Ventas.AnyAsync(v => v.idCliente == id);
+
+                if (tieneventas) { 
+                    Console.WriteLine("No se puede eliminar el Cliente porque tiene venta asociada");
+                    TempData["Error"] = "No se puede eliminar el cliente porque tiene ventas asociadas";
+                    return RedirectToAction(nameof(Lista)); 
+                }
+
+                _appDBContext.Clientes.Remove(cliente);
+                await _appDBContext.SaveChangesAsync();
+                TempData["Exito"] = "Cliente eliminado correctamente";
+                Console.WriteLine("Eliminacion Completada de CLiente");
+                return RedirectToAction(nameof(Lista));
+            }
+            catch (Exception ex) 
+            {
+                Console.WriteLine($"Error al ejecutar Eliminar { ex.Message}");
+                Console.WriteLine($"StackTrace: {ex.StackTrace}");
+                return RedirectToAction(nameof(Lista));
+            }
+        }
+
+        //Modulo de Editar
+
+        [HttpGet]
+        public async Task<IActionResult> Editar (int? id)
+        {
+            if (id == null){ return NotFound(); }
+
+            var cliente = await _appDBContext.Clientes.FindAsync(id);
+
+            if (cliente == null) { return NotFound(); }
+            return View(cliente);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Editar(int id, Cliente cliente)
+        {
+            if(id != cliente.idCliente) { return NotFound(); }
+
+            try
+            {
+                ModelState.Remove("Ventas");
+
+                if (ModelState.IsValid)
+                {
+                    _appDBContext.Update(cliente);
+                    await _appDBContext.SaveChangesAsync();
+
+                    Console.WriteLine("Cliente editado correctamente");
+                    return RedirectToAction(nameof(Lista));
+                }
+                else
+                {
+                    foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        Console.Write($"Error : {error.ErrorMessage}");
+                    }
+                    return View(cliente);
+                }
+
+
+            }catch( DbUpdateConcurrencyException ex)
+            {
+                
+                if (!ClienteExists(cliente.idCliente))
+                {
+                    return NotFound();
+                }
+                else { Console.Write($"Error de Concurrencia {ex.Message}"); return View(cliente); }
+            }
+            catch(Exception ex)
+            {
+                Console.Write($"Error: {ex.Message}");
+                return View(cliente);
+            }
+
+
+        }
+        private bool ClienteExists(int id)
+        {
+            return _appDBContext.Clientes.Any(e => e.idCliente == id);
+        }
 
 
     }
