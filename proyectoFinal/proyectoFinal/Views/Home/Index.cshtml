@@ -1,7 +1,106 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio - Textilería";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Bienvenido a la pagina de Textileria</h1>
+@model List<proyectoFinal.Models.Producto> // Asegúrate de pasar la lista de productos desde el controlador
+
+<div class="text-center mb-5">
+    <h1 class="display-4">Bienvenido a Textilería Pallay</h1>
+    <p class="lead">Descubre nuestra colección exclusiva de productos textiles</p>
 </div>
+
+<!-- Filtros por categoría -->
+<div class="mb-4">
+    <div class="btn-group" role="group">
+        <a href="#" class="btn btn-outline-primary active">Todos</a>
+        <a href="#" class="btn btn-outline-primary">Algodón</a>
+        <a href="#" class="btn btn-outline-primary">Lino</a>
+        <a href="#" class="btn btn-outline-primary">Seda</a>
+        <a href="#" class="btn btn-outline-primary">Lana</a>
+    </div>
+</div>
+
+<!-- Catálogo de productos -->
+<div class="row">
+    @foreach (var producto in Model)
+    {
+        <div class="col-md-4 col-lg-3 mb-4">
+            <div class="card h-100 product-card">
+                <!-- Badge de oferta (opcional) -->
+                @if (producto.precioProducto < 50) // Ejemplo: productos menores a $50 muestran badge
+                {
+                    <span class="badge bg-danger position-absolute" style="top: 10px; right: 10px;">OFERTA</span>
+                }
+
+                <!-- Imagen del producto -->
+                <div class="product-image-container">
+                    <img src="@(producto.ImagenUrl)"
+                         class="card-img-top"
+                         alt="@producto.nombreProducto">
+                </div>
+
+                <div class="card-body">
+                    <!-- Nombre y descripción -->
+                    <h5 class="card-title">@producto.nombreProducto</h5>
+                    <p class="card-text text-muted small">@(producto.descripcionProducto.Length > 50 ? producto.descripcionProducto.Substring(0, 50) + "..." : producto.descripcionProducto)</p>
+
+                    <!-- Precio y stock -->
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-success fw-bold">@producto.precioProducto.ToString("N2")</span>
+                        <span class="badge bg-info">Stock: @producto.stock</span>
+                    </div>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="card-footer bg-white border-0">
+                    <div class="d-grid gap-2">
+                        <a href="#" class="btn btn-primary">Ver detalle</a>
+                        <a href="#" class="btn btn-outline-secondary">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- Estilos personalizados -->
+<style>
+    .product-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 10px;
+        overflow: hidden;
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+    .product-image-container {
+        height: 200px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8f9fa;
+    }
+
+        .product-image-container img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+    .product-card:hover .product-image-container img {
+        transform: scale(1.05);
+    }
+
+    .card-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>

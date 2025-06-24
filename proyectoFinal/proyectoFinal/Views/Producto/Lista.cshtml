@@ -10,6 +10,7 @@
     <thead>
         <tr>
             <th>ID</th>
+            <th>Imagen</th>
             <th>Nombre Producto</th>
             <th>Descripcion</th>
             <th>Precio</th>
@@ -22,6 +23,11 @@
         {
             <tr>
                 <td>@Html.DisplayFor(modelItem => item.IdProducto)</td>
+                <td><img src="@(item.ImagenUrl)" 
+                    alt="@item.nombreProducto"
+                    class="img-thumbnail"
+                    style="width: 60px; height:60px; object-fit: cover;"
+                    /></td>
                 <td>@Html.DisplayFor(modelItem => item.nombreProducto)</td>
                 <td>@Html.DisplayFor(modelItem => item.descripcionProducto)</td>
                 <td>@Html.DisplayFor(modelItem => item.precioProducto)</td>

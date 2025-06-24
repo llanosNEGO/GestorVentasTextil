@@ -98,7 +98,8 @@ namespace proyectoFinal.Controllers
                         descripcionProducto = producto.descripcionProducto,
                         precioProducto = producto.precioProducto,
                         stock = producto.stock,
-                        idCategoria = producto.idCategoria
+                        idCategoria = producto.idCategoria,
+                        ImagenUrl = producto.ImagenUrl ?? "https://static.vecteezy.com/system/resources/previews/004/141/669/large_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg"
                     };
 
                     _dbContext.Productos.Add(producto1);
