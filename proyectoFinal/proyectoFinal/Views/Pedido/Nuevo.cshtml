@@ -1,0 +1,167 @@
+﻿@model proyectoFinal.ViewM.PedidoVM
+
+@{
+	ViewData["Title"] = "Nuevo Pedido";
+	var productos = ViewBag.Productos as List<Producto>;
+}
+
+
+<div class="form-container-enhanced">
+    <h2>Nuevo Pedido</h2>
+
+    <form asp-action="Nuevo" id="pedidoForm">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Fecha de Emision</label>
+                <input type="date" asp-for="fechaPedido" class="form-fecha" readonly />
+                <span asp-validation-for="fechaPedido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Fecha de Entrega</label>
+                <input type="date" asp-for="fechaEntrega" class="form-fecha" />
+                <span asp-validation-for="fechaEntrega" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Cliente</label>
+                <select asp-for="idCliente" asp-items="@ViewBag.Clientes" class="form-control">
+                    <option value="">Seleccione un cliente</option>
+                </select>
+                <span asp-validation-for="idCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Direccion de Entrega</label>
+                <input type="text" asp-for="direccionEntrega" class="form-control" />
+                <span asp-validation-for="direccionEntrega" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Observacion</label>
+                <input type="text" asp-for="Comentario" class="form-control" />
+                <span asp-validation-for="Comentario" class="text-danger"></span>
+            </div>
+        </div>
+
+        <h2 class="section-header">Detalles de Pedido</h2>
+        <table class="table-form" id="detallesTable">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Subtotal</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Detalles != null && Model.Detalles.Count > 0)
+                {
+
+                    @for (int i = 0; i < Model.Detalles.Count; i++)
+                    {
+                        <tr>
+                            <td>
+                                <select asp-for="Detalles[i].idProducto" class="form-control producto-select">
+                                    <option value="">Seleccione producto</option>
+                                    @foreach (var producto in productos)
+                                    {
+                                        <option value="@producto.IdProducto" data-precio="@producto.precioProducto">
+                                            @producto.nombreProducto
+                                        </option>
+                                    }
+                                </select>
+                                <span asp-validation-for="Detalles[i].idProducto" class="text-danger"></span>
+                            </td>
+                            <td>
+                                <input asp-for="Detalles[i].cantidad" class="form-control cantidad" />
+                                <span asp-validation-for="Detalles[i].cantidad" class="text-danger"></span>
+                            </td>
+                            <td>
+                                <input asp-for="Detalles[i].precioUnitario" class="form-fecha precio-unitario" readonly />
+                            </td>
+                            <td>
+                                <input asp-for="Detalles[i].subtotal" class="form-fecha subtotal" readonly />
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-remove">Eliminar</button>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        <div class="floating-action-btn">
+            <button type="button" id="addDetail" class="btn btn-primary">
+                Agregar Producto
+            </button>
+        </div>
+
+        <div class="totals-section">
+            <label>Total:</label>
+            <span class="totals-display" id="totalVenta">0.00</span>
+        </div>
+        <div class="action-buttons">
+            <a asp-action="Lista" class="btn btn-danger ">Cancelar</a>
+            <button type="submit" class="btn btn-success">Guardar Pedido</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // Agregar nuevo detalle
+            $("#addDetail").click(function() {
+                $.ajax({
+                    url: '@Url.Action("ObtenerFilaDetalle")',
+                    success: function(data) {
+                        $("#detallesTable tbody").append(data);
+                        actualizarTotal();
+                    }
+                });
+            });
+
+            // Eliminar detalle
+            $(document).on("click", ".btn-remove", function() {
+                $(this).closest("tr").remove();
+                actualizarTotal();
+            });
+
+            // Cambio de producto
+            $(document).on("change", ".producto-select", function() {
+                var productoId = $(this).val();
+                var $row = $(this).closest("tr");
+
+                if (productoId) {
+                    $.get('@Url.Action("ObtenerPrecioProducto")', { id: productoId }, function(data) {
+                        $row.find(".precio-unitario").val(data.precio);
+                        calcularSubtotal($row);
+                    });
+                }
+            });
+
+            // Cambio de cantidad
+            $(document).on("change", ".cantidad", function() {
+                calcularSubtotal($(this).closest("tr"));
+            });
+
+            function calcularSubtotal($row) {
+                var cantidad = parseFloat($row.find(".cantidad").val()) || 0;
+                var precio = parseFloat($row.find(".precio-unitario").val()) || 0;
+                var subtotal = cantidad * precio;
+                $row.find(".subtotal").val(subtotal.toFixed(2));
+                actualizarTotal();
+            }
+
+            function actualizarTotal() {
+                var total = 0;
+                $(".subtotal").each(function() {
+                    total += parseFloat($(this).val()) || 0;
+                });
+                $("#totalVenta").text(total.toFixed(2));
+            }
+        });
+    </script>
+}

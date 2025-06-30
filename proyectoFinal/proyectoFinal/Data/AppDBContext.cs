@@ -21,6 +21,8 @@ namespace proyectoFinal.Data
         public DbSet<Rol> Rol {  get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Venta> Ventas { get; set; }
+        public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<DetallePedido> detallePedidos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -69,7 +71,19 @@ namespace proyectoFinal.Data
             {
                 tb.HasOne(tb => tb.cliente).WithMany(tb => tb.ventas).HasForeignKey( tb => tb.idCliente);
                 tb.HasOne(tb => tb.medioPago).WithMany(tb=>tb.ventas).HasForeignKey( tb=>tb.idMedioPago);
+                tb.HasOne(tb => tb.pedido).WithMany(tb => tb.ventas).HasForeignKey(tb => tb.idpedido).OnDelete(DeleteBehavior.NoAction);
             });
+            modelBuilder.Entity<Pedido>(tb =>
+            {
+                tb.HasOne(tb => tb.cliente).WithMany(tb => tb.pedidos).HasForeignKey(tb => tb.idcliente).OnDelete(DeleteBehavior.NoAction);
+            });
+            modelBuilder.Entity<Pedido>().ToTable("Pedido");
+            modelBuilder.Entity<DetallePedido>(tb =>
+            {
+                tb.HasOne(tb => tb.pedido).WithMany(tb => tb.detalles).HasForeignKey(tb => tb.idpedido);
+                tb.HasOne(tb => tb.producto).WithMany(tb => tb.detallePedidos).HasForeignKey(tb => tb.idproducto);
+            });
+            modelBuilder.Entity<DetallePedido>().ToTable("DetallePedido");
         }
 
 

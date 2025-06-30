@@ -89,6 +89,8 @@ namespace proyectoFinal.Migrations
                     nombreProducto = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     descripcionProducto = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     precioProducto = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    stock = table.Column<int>(type: "int", nullable: false),
+                    ImagenUrl = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     idCategoria = table.Column<int>(type: "int", nullable: false),
                     Categoria = table.Column<int>(type: "int", nullable: false)
                 },
@@ -104,34 +106,27 @@ namespace proyectoFinal.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Ventas",
+                name: "Pedido",
                 columns: table => new
                 {
-                    idVenta = table.Column<int>(type: "int", nullable: false)
+                    idPedido = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    fecha_registro = table.Column<DateOnly>(type: "date", nullable: false),
-                    total = table.Column<decimal>(type: "decimal(5,2)", precision: 5, scale: 2, nullable: false),
-                    estado = table.Column<bool>(type: "bit", nullable: false),
-                    idCliente = table.Column<int>(type: "int", nullable: false),
-                    idMedioPago = table.Column<int>(type: "int", nullable: false),
-                    Cliente = table.Column<int>(type: "int", nullable: false),
-                    MedioPago = table.Column<int>(type: "int", nullable: false)
+                    fechaPedido = table.Column<DateOnly>(type: "date", nullable: false),
+                    fechaEntrega = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    direccionEntrega = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    subtotal = table.Column<decimal>(type: "decimal(10,2)", precision: 10, scale: 2, nullable: false),
+                    EstadoPedido = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Comentario = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    idcliente = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Ventas", x => x.idVenta);
+                    table.PrimaryKey("PK_Pedido", x => x.idPedido);
                     table.ForeignKey(
-                        name: "FK_Ventas_Cliente_idCliente",
-                        column: x => x.idCliente,
+                        name: "FK_Pedido_Cliente_idcliente",
+                        column: x => x.idcliente,
                         principalTable: "Cliente",
-                        principalColumn: "idCliente",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Ventas_MedioPago_idMedioPago",
-                        column: x => x.idMedioPago,
-                        principalTable: "MedioPago",
-                        principalColumn: "idMedioPago",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "idCliente");
                 });
 
             migrationBuilder.CreateTable(
@@ -144,11 +139,19 @@ namespace proyectoFinal.Migrations
                     total = table.Column<decimal>(type: "decimal(5,2)", precision: 5, scale: 2, nullable: false),
                     estado = table.Column<bool>(type: "bit", nullable: false),
                     idProveedor = table.Column<int>(type: "int", nullable: false),
+                    idmedioPago = table.Column<int>(type: "int", nullable: false),
+                    MedioPago = table.Column<int>(type: "int", nullable: false),
                     Proveedor = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ComprasProveedores", x => x.idCompraProveedor);
+                    table.ForeignKey(
+                        name: "FK_ComprasProveedores_MedioPago_idmedioPago",
+                        column: x => x.idmedioPago,
+                        principalTable: "MedioPago",
+                        principalColumn: "idMedioPago",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ComprasProveedores_Proveedor_idProveedor",
                         column: x => x.idProveedor,
@@ -205,6 +208,105 @@ namespace proyectoFinal.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "DetallePedido",
+                columns: table => new
+                {
+                    idDetallePedido = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    cantidad = table.Column<int>(type: "int", nullable: false),
+                    precioUnitario = table.Column<decimal>(type: "decimal(10,2)", precision: 10, scale: 2, nullable: false),
+                    subtotal = table.Column<decimal>(type: "decimal(10,2)", precision: 10, scale: 2, nullable: false),
+                    idpedido = table.Column<int>(type: "int", nullable: false),
+                    idproducto = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DetallePedido", x => x.idDetallePedido);
+                    table.ForeignKey(
+                        name: "FK_DetallePedido_Pedido_idpedido",
+                        column: x => x.idpedido,
+                        principalTable: "Pedido",
+                        principalColumn: "idPedido",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_DetallePedido_Producto_idproducto",
+                        column: x => x.idproducto,
+                        principalTable: "Producto",
+                        principalColumn: "IdProducto",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Ventas",
+                columns: table => new
+                {
+                    idVenta = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    fecha_registro = table.Column<DateOnly>(type: "date", nullable: false),
+                    total = table.Column<decimal>(type: "decimal(5,2)", precision: 5, scale: 2, nullable: false),
+                    estado = table.Column<bool>(type: "bit", nullable: false),
+                    idpedido = table.Column<int>(type: "int", nullable: true),
+                    idCliente = table.Column<int>(type: "int", nullable: false),
+                    idMedioPago = table.Column<int>(type: "int", nullable: false),
+                    Cliente = table.Column<int>(type: "int", nullable: false),
+                    MedioPago = table.Column<int>(type: "int", nullable: false),
+                    Pedido = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Ventas", x => x.idVenta);
+                    table.ForeignKey(
+                        name: "FK_Ventas_Cliente_idCliente",
+                        column: x => x.idCliente,
+                        principalTable: "Cliente",
+                        principalColumn: "idCliente",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Ventas_MedioPago_idMedioPago",
+                        column: x => x.idMedioPago,
+                        principalTable: "MedioPago",
+                        principalColumn: "idMedioPago",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Ventas_Pedido_idpedido",
+                        column: x => x.idpedido,
+                        principalTable: "Pedido",
+                        principalColumn: "idPedido");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DetalleCompra",
+                columns: table => new
+                {
+                    idDetalleCompra = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    precioUnitario = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    cantidad = table.Column<int>(type: "int", nullable: false),
+                    color = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    talla = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    subtotal = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    idCompras = table.Column<int>(type: "int", nullable: false),
+                    idProducto = table.Column<int>(type: "int", nullable: false),
+                    Producto = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DetalleCompra", x => x.idDetalleCompra);
+                    table.ForeignKey(
+                        name: "FK_DetalleCompra_ComprasProveedores_idCompras",
+                        column: x => x.idCompras,
+                        principalTable: "ComprasProveedores",
+                        principalColumn: "idCompraProveedor",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_DetalleCompra_Producto_idProducto",
+                        column: x => x.idProducto,
+                        principalTable: "Producto",
+                        principalColumn: "IdProducto",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "DetalleVenta",
                 columns: table => new
                 {
@@ -235,36 +337,10 @@ namespace proyectoFinal.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "DetalleCompra",
-                columns: table => new
-                {
-                    idDetalleCompra = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    precioUnitario = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    cantidad = table.Column<int>(type: "int", nullable: false),
-                    color = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    talla = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    idCompras = table.Column<int>(type: "int", nullable: false),
-                    idProducto = table.Column<int>(type: "int", nullable: false),
-                    Producto = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DetalleCompra", x => x.idDetalleCompra);
-                    table.ForeignKey(
-                        name: "FK_DetalleCompra_ComprasProveedores_idCompras",
-                        column: x => x.idCompras,
-                        principalTable: "ComprasProveedores",
-                        principalColumn: "idCompraProveedor",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_DetalleCompra_Producto_idProducto",
-                        column: x => x.idProducto,
-                        principalTable: "Producto",
-                        principalColumn: "IdProducto",
-                        onDelete: ReferentialAction.Cascade);
-                });
+            migrationBuilder.CreateIndex(
+                name: "IX_ComprasProveedores_idmedioPago",
+                table: "ComprasProveedores",
+                column: "idmedioPago");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ComprasProveedores_idProveedor",
@@ -282,6 +358,16 @@ namespace proyectoFinal.Migrations
                 column: "idProducto");
 
             migrationBuilder.CreateIndex(
+                name: "IX_DetallePedido_idpedido",
+                table: "DetallePedido",
+                column: "idpedido");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DetallePedido_idproducto",
+                table: "DetallePedido",
+                column: "idproducto");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_DetalleVenta_idProducto",
                 table: "DetalleVenta",
                 column: "idProducto");
@@ -295,6 +381,11 @@ namespace proyectoFinal.Migrations
                 name: "IX_Inventario_idProducto",
                 table: "Inventario",
                 column: "idProducto");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pedido_idcliente",
+                table: "Pedido",
+                column: "idcliente");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Producto_idCategoria",
@@ -315,6 +406,11 @@ namespace proyectoFinal.Migrations
                 name: "IX_Ventas_idMedioPago",
                 table: "Ventas",
                 column: "idMedioPago");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Ventas_idpedido",
+                table: "Ventas",
+                column: "idpedido");
         }
 
         /// <inheritdoc />
@@ -322,6 +418,9 @@ namespace proyectoFinal.Migrations
         {
             migrationBuilder.DropTable(
                 name: "DetalleCompra");
+
+            migrationBuilder.DropTable(
+                name: "DetallePedido");
 
             migrationBuilder.DropTable(
                 name: "DetalleVenta");
@@ -348,13 +447,16 @@ namespace proyectoFinal.Migrations
                 name: "Proveedor");
 
             migrationBuilder.DropTable(
-                name: "Cliente");
-
-            migrationBuilder.DropTable(
                 name: "MedioPago");
 
             migrationBuilder.DropTable(
+                name: "Pedido");
+
+            migrationBuilder.DropTable(
                 name: "Categoria");
+
+            migrationBuilder.DropTable(
+                name: "Cliente");
         }
     }
 }

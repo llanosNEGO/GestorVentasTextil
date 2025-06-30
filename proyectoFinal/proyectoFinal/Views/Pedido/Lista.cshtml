@@ -1,0 +1,49 @@
+﻿@model IEnumerable<proyectoFinal.Models.Pedido>
+@{
+	ViewData["Title"] = "Lista de Pedidos";
+}
+
+
+<h2>Lista Pedidos</h2>
+
+<p>
+    <a asp-controller="Pedido" asp-action="Nuevo" class="btn btn-primary m-3">
+        Nuevo
+    </a>
+</p>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Fecha Emision</th>
+            <th>Fecha Entrega</th>
+            <th>Cliente</th>
+            <th>Direccion de Entrega</th>
+            <th>Total</th>
+            <th>Estado</th>
+            <th>Observaciones</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pedido in Model)
+        {
+            <tr>
+                <td>@pedido.idPedido</td>
+                <td>@pedido.fechaPedido.ToString("dd/MM/yyyy")</td>
+                <td>@pedido.fechaEntrega.ToString("dd/MM/yyyy")</td>
+                <td>@pedido.cliente?.nombreCliente</td>
+                <td>@pedido.direccionEntrega</td>
+                <td>@pedido.subtotal.ToString("0.00")</td>
+                <td>@pedido.Comentario</td>
+                <td>@pedido.EstadoPedido</td>
+                <td>
+                    <a asp-action="Detalle" asp-controller="Pedido" asp-route-id="@pedido.idPedido" class="btn btn-info btn-sm">
+                        <i class="fas fa-eye"></i> Ver Detalle
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

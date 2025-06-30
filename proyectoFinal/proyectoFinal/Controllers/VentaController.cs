@@ -164,7 +164,7 @@ namespace proyectoFinal.Controllers
                                 idCliente = model.idCliente,
                                 idMedioPago = model.idMedioPago,
                                 total = model.Detalles.Sum(d => d.subtotal),
-                                estado = true,
+                                estado = Venta.estadoventa.Pendiente,
                                 detalles = new List<DetalleVenta>()
                             };
                             foreach (var detallevm in model.Detalles)

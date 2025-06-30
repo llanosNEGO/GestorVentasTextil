@@ -65,6 +65,7 @@ namespace proyectoFinal.Controllers
                 ModelState.Remove("inventario");
                 ModelState.Remove("detalleVentas");
                 ModelState.Remove("detalleCompras");
+                ModelState.Remove("detallePedidos");
 
                 // Debug del ModelState después de limpiar
                 if (!ModelState.IsValid)
@@ -99,7 +100,7 @@ namespace proyectoFinal.Controllers
                         precioProducto = producto.precioProducto,
                         stock = producto.stock,
                         idCategoria = producto.idCategoria,
-                        ImagenUrl = producto.ImagenUrl ?? "https://static.vecteezy.com/system/resources/previews/004/141/669/large_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg"
+                        ImagenUrl = producto.ImagenUrl ?? "https://www.shutterstock.com/image-vector/no-photo-available-vector-icon-260nw-2082597646.jpg"
                     };
 
                     _dbContext.Productos.Add(producto1);

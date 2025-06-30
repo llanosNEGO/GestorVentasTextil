@@ -12,12 +12,24 @@ namespace proyectoFinal.Models
         public DateOnly fecha_registro { get; set; }
         [Required, Precision(5,2)]
         public decimal total {  get; set; }
+        public enum estadoventa
+        {
+            Pendiente,
+            Completada,
+            Cancelada
+        }
+
         [Required]
-        public bool estado {  get; set; }
+        public estadoventa estado { get; set; } = estadoventa.Pendiente;
 
         //FK
 
         public ICollection<DetalleVenta> detalles { get; set; }
+
+        [ForeignKey("Pedido")]
+        public Pedido? pedido { get; set; }
+        public int? idpedido { get; set; }
+
 
         [ForeignKey("Cliente")]
         public Cliente cliente { get; set; }

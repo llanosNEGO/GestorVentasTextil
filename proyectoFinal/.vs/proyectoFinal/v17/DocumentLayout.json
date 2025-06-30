@@ -3,172 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Migrations\\20250630205110_3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:proyectoFinal\\Migrations\\20250630205110_3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Migrations\\20250630205016_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:proyectoFinal\\Migrations\\20250630205016_2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\models\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\models\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Migrations\\20250624231914_5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:proyectoFinal\\Migrations\\20250624231914_5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\producto\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\producto\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\producto\\nuevo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\producto\\nuevo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\controllers\\compracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\controllers\\compracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\controllers\\rolcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\controllers\\rolcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\viewm\\loginusuariovm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\viewm\\loginusuariovm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\controllers\\inventariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\controllers\\inventariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\login\\registrarse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\login\\registrarse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\viewm\\registrousuariovm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\viewm\\registrousuariovm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\cliente\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\cliente\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\cliente\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\cliente\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\cliente\\eliminar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\cliente\\eliminar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\compra\\nuevo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\compra\\nuevo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\compra\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\compra\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\venta\\detalle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\venta\\detalle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\venta\\detalleventarow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\venta\\detalleventarow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\cliente\\nuevo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\cliente\\nuevo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\pedido\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\pedido\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\venta\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\venta\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\venta\\detalle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\venta\\detalle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\pedido\\detalle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\pedido\\detalle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\models\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\models\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\compra\\detalle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\compra\\detalle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\pedido\\nuevo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\pedido\\nuevo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\compra\\detallecomprarow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\compra\\detallecomprarow.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\models\\proveedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\models\\proveedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\models\\mediopago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\models\\mediopago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\migrations\\20250608081908_4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\migrations\\20250608081908_4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|c:\\users\\abed\\onedrive\\documentos\\upn\\soluciones y arquitectura\\proyectofinal\\proyectofinal\\views\\cliente\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BEAE4984-7251-432B-9815-0020ADB2CC5E}|proyectoFinal\\proyectoFinal.csproj|solutionrelative:proyectofinal\\views\\cliente\\lista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -178,519 +70,206 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Producto.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Models\\Producto.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\Models\\Producto.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Models\\Producto.cs",
-              "RelativeToolTip": "proyectoFinal\\Models\\Producto.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAcwBMAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T16:42:00.146Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AppDBContext.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Data\\AppDBContext.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\Data\\AppDBContext.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Data\\AppDBContext.cs",
-              "RelativeToolTip": "proyectoFinal\\Data\\AppDBContext.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAUwDYAAABCAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "20250630205110_3.cs",
+              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Migrations\\20250630205110_3.cs",
+              "RelativeDocumentMoniker": "proyectoFinal\\Migrations\\20250630205110_3.cs",
+              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Migrations\\20250630205110_3.cs",
+              "RelativeToolTip": "proyectoFinal\\Migrations\\20250630205110_3.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T23:13:07.422Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "LoginUsuarioVM.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\ViewM\\LoginUsuarioVM.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\ViewM\\LoginUsuarioVM.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\ViewM\\LoginUsuarioVM.cs",
-              "RelativeToolTip": "proyectoFinal\\ViewM\\LoginUsuarioVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T07:07:51.861Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CompraController.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\CompraController.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\Controllers\\CompraController.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\CompraController.cs",
-              "RelativeToolTip": "proyectoFinal\\Controllers\\CompraController.cs",
-              "ViewState": "AgIAAKoAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T09:02:51.632Z",
+              "WhenOpened": "2025-06-30T20:51:10.749Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "proyectoFinal\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA6AAAAAAAAAA==",
+              "Title": "20250630205016_2.cs",
+              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Migrations\\20250630205016_2.cs",
+              "RelativeDocumentMoniker": "proyectoFinal\\Migrations\\20250630205016_2.cs",
+              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Migrations\\20250630205016_2.cs",
+              "RelativeToolTip": "proyectoFinal\\Migrations\\20250630205016_2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T08:34:48.841Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "proyectoFinal\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAEkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-24T23:28:50.416Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Nuevo.cshtml",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Producto\\Nuevo.cshtml",
-              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Producto\\Nuevo.cshtml",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Producto\\Nuevo.cshtml",
-              "RelativeToolTip": "proyectoFinal\\Views\\Producto\\Nuevo.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACwAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-24T23:11:58.209Z",
+              "WhenOpened": "2025-06-30T20:50:17.06Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "20250624231914_5.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Migrations\\20250624231914_5.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\Migrations\\20250624231914_5.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Migrations\\20250624231914_5.cs",
-              "RelativeToolTip": "proyectoFinal\\Migrations\\20250624231914_5.cs",
+              "Title": "Lista.cshtml",
+              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Pedido\\Lista.cshtml",
+              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Pedido\\Lista.cshtml",
+              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Pedido\\Lista.cshtml",
+              "RelativeToolTip": "proyectoFinal\\Views\\Pedido\\Lista.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T23:19:14.362Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProductoController.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\ProductoController.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\Controllers\\ProductoController.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\ProductoController.cs",
-              "RelativeToolTip": "proyectoFinal\\Controllers\\ProductoController.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAIwHIAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T13:21:38.961Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-30T20:48:07.53Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Lista.cshtml",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Producto\\Lista.cshtml",
-              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Producto\\Lista.cshtml",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Producto\\Lista.cshtml",
-              "RelativeToolTip": "proyectoFinal\\Views\\Producto\\Lista.cshtml",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAIwBwAAABHAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Venta\\Lista.cshtml",
+              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Venta\\Lista.cshtml",
+              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Venta\\Lista.cshtml",
+              "RelativeToolTip": "proyectoFinal\\Views\\Venta\\Lista.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACMAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-11T11:50:34.247Z",
+              "WhenOpened": "2025-06-30T20:46:55.174Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\appsettings.json",
-              "RelativeDocumentMoniker": "proyectoFinal\\appsettings.json",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\appsettings.json",
-              "RelativeToolTip": "proyectoFinal\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAACrAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-16T06:34:39.321Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "RolController.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\RolController.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\Controllers\\RolController.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\RolController.cs",
-              "RelativeToolTip": "proyectoFinal\\Controllers\\RolController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T16:29:13.628Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Login\\Login.cshtml",
-              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Login\\Login.cshtml",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Login\\Login.cshtml",
-              "RelativeToolTip": "proyectoFinal\\Views\\Login\\Login.cshtml",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGAAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-08T08:36:31.576Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "VentaController.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\VentaController.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\Controllers\\VentaController.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\VentaController.cs",
-              "RelativeToolTip": "proyectoFinal\\Controllers\\VentaController.cs",
-              "ViewState": "AgIAAMUAAAAAAAAAAAAuwNkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T08:21:02.932Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "InventarioController.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\InventarioController.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\Controllers\\InventarioController.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\InventarioController.cs",
-              "RelativeToolTip": "proyectoFinal\\Controllers\\InventarioController.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAwwFEAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T13:21:05.604Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Models\\Usuario.cs",
-              "RelativeToolTip": "proyectoFinal\\Models\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T06:19:31.486Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Program.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\Program.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Program.cs",
-              "RelativeToolTip": "proyectoFinal\\Program.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T06:34:37.168Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ClienteController.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\ClienteController.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\Controllers\\ClienteController.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\ClienteController.cs",
-              "RelativeToolTip": "proyectoFinal\\Controllers\\ClienteController.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAswLkAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T13:22:50.424Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "RegistroUsuarioVM.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\ViewM\\RegistroUsuarioVM.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\ViewM\\RegistroUsuarioVM.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\ViewM\\RegistroUsuarioVM.cs",
-              "RelativeToolTip": "proyectoFinal\\ViewM\\RegistroUsuarioVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T07:07:49.638Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "proyectoFinal\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAcwDsAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T07:10:47.97Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Registrarse.cshtml",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Login\\Registrarse.cshtml",
-              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Login\\Registrarse.cshtml",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Login\\Registrarse.cshtml",
-              "RelativeToolTip": "proyectoFinal\\Views\\Login\\Registrarse.cshtml",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-11T11:07:20.511Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Nuevo.cshtml",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Compra\\Nuevo.cshtml",
-              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Compra\\Nuevo.cshtml",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Compra\\Nuevo.cshtml",
-              "RelativeToolTip": "proyectoFinal\\Views\\Compra\\Nuevo.cshtml",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFIAAABdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-08T08:21:34.598Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Lista.cshtml",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Cliente\\Lista.cshtml",
-              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Cliente\\Lista.cshtml",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Cliente\\Lista.cshtml",
-              "RelativeToolTip": "proyectoFinal\\Views\\Cliente\\Lista.cshtml",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAmwBQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-11T12:10:49.333Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Editar.cshtml",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Cliente\\Editar.cshtml",
-              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Cliente\\Editar.cshtml",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Cliente\\Editar.cshtml",
-              "RelativeToolTip": "proyectoFinal\\Views\\Cliente\\Editar.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAADQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-11T08:36:54.172Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "DetalleVentaRow.cshtml",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Venta\\DetalleVentaRow.cshtml",
-              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Venta\\DetalleVentaRow.cshtml",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Venta\\DetalleVentaRow.cshtml",
-              "RelativeToolTip": "proyectoFinal\\Views\\Venta\\DetalleVentaRow.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-07T23:36:32.908Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "proyectoFinal\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-08T07:54:57.473Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Lista.cshtml",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Compra\\Lista.cshtml",
-              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Compra\\Lista.cshtml",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Compra\\Lista.cshtml",
-              "RelativeToolTip": "proyectoFinal\\Views\\Compra\\Lista.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-07T23:10:03.664Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Eliminar.cshtml",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Cliente\\Eliminar.cshtml",
-              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Cliente\\Eliminar.cshtml",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Cliente\\Eliminar.cshtml",
-              "RelativeToolTip": "proyectoFinal\\Views\\Cliente\\Eliminar.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-11T13:15:25.549Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 5,
               "Title": "Detalle.cshtml",
               "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Venta\\Detalle.cshtml",
               "RelativeDocumentMoniker": "proyectoFinal\\Views\\Venta\\Detalle.cshtml",
               "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Venta\\Detalle.cshtml",
               "RelativeToolTip": "proyectoFinal\\Views\\Venta\\Detalle.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAswEMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABgAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-07T23:17:00.783Z"
+              "WhenOpened": "2025-06-30T20:46:46.38Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Nuevo.cshtml",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Cliente\\Nuevo.cshtml",
-              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Cliente\\Nuevo.cshtml",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Cliente\\Nuevo.cshtml",
-              "RelativeToolTip": "proyectoFinal\\Views\\Cliente\\Nuevo.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-11T11:45:23.217Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 7,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "proyectoFinal\\wwwroot\\css\\site.css",
               "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\wwwroot\\css\\site.css",
               "RelativeToolTip": "proyectoFinal\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAEYBAAAAAAAAAAAiwGMBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-11T11:51:10.841Z"
+              "WhenOpened": "2025-06-30T20:45:14.96Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 8,
               "Title": "_Layout.cshtml.css",
               "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Shared\\_Layout.cshtml.css",
               "RelativeDocumentMoniker": "proyectoFinal\\Views\\Shared\\_Layout.cshtml.css",
               "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Shared\\_Layout.cshtml.css",
               "RelativeToolTip": "proyectoFinal\\Views\\Shared\\_Layout.cshtml.css",
-              "ViewState": "AgIAABMAAAAAAAAAAAAiwDAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-08T08:35:06.589Z"
+              "WhenOpened": "2025-06-30T20:45:06.94Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Lista.cshtml",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Venta\\Lista.cshtml",
-              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Venta\\Lista.cshtml",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Venta\\Lista.cshtml",
-              "RelativeToolTip": "proyectoFinal\\Views\\Venta\\Lista.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-07T23:10:08.911Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "proyectoFinal\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Properties\\launchSettings.json",
-              "RelativeToolTip": "proyectoFinal\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-08T08:38:29.132Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "proyectoFinal\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "DocumentIndex": 9,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "proyectoFinal\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-08T08:35:05.339Z"
+              "WhenOpened": "2025-06-30T20:45:04.552Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "bootstrap.css",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-              "RelativeDocumentMoniker": "proyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-              "RelativeToolTip": "proyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAE4AAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-08T08:50:06.308Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "bootstrap.css.map",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-              "RelativeDocumentMoniker": "proyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-              "RelativeToolTip": "proyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-06-08T08:49:57.178Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "20250608081908_4.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Migrations\\20250608081908_4.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\Migrations\\20250608081908_4.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Migrations\\20250608081908_4.cs",
-              "RelativeToolTip": "proyectoFinal\\Migrations\\20250608081908_4.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T08:19:08.661Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 6,
               "Title": "Detalle.cshtml",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Compra\\Detalle.cshtml",
-              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Compra\\Detalle.cshtml",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Compra\\Detalle.cshtml",
-              "RelativeToolTip": "proyectoFinal\\Views\\Compra\\Detalle.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAC0AAAAwAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Pedido\\Detalle.cshtml",
+              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Pedido\\Detalle.cshtml",
+              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Pedido\\Detalle.cshtml",
+              "RelativeToolTip": "proyectoFinal\\Views\\Pedido\\Detalle.cshtml",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-07T23:16:57.933Z"
+              "WhenOpened": "2025-06-30T20:44:45.524Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "DetalleCompraRow.cshtml",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Compra\\DetalleCompraRow.cshtml",
-              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Compra\\DetalleCompraRow.cshtml",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Compra\\DetalleCompraRow.cshtml",
-              "RelativeToolTip": "proyectoFinal\\Views\\Compra\\DetalleCompraRow.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAABLAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "Nuevo.cshtml",
+              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Pedido\\Nuevo.cshtml",
+              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Pedido\\Nuevo.cshtml",
+              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Pedido\\Nuevo.cshtml",
+              "RelativeToolTip": "proyectoFinal\\Views\\Pedido\\Nuevo.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-07T23:36:14.433Z"
+              "WhenOpened": "2025-06-30T20:39:46.81Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "Proveedor.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Models\\Proveedor.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\Models\\Proveedor.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Models\\Proveedor.cs",
-              "RelativeToolTip": "proyectoFinal\\Models\\Proveedor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T23:25:31.716Z"
+              "DocumentIndex": 14,
+              "Title": "Lista.cshtml",
+              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Cliente\\Lista.cshtml",
+              "RelativeDocumentMoniker": "proyectoFinal\\Views\\Cliente\\Lista.cshtml",
+              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Views\\Cliente\\Lista.cshtml",
+              "RelativeToolTip": "proyectoFinal\\Views\\Cliente\\Lista.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAowBkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-30T20:27:37.173Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "MedioPago.cs",
-              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Models\\MedioPago.cs",
-              "RelativeDocumentMoniker": "proyectoFinal\\Models\\MedioPago.cs",
-              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Models\\MedioPago.cs",
-              "RelativeToolTip": "proyectoFinal\\Models\\MedioPago.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABNAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Pedido.cs",
+              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Models\\Pedido.cs",
+              "RelativeDocumentMoniker": "proyectoFinal\\Models\\Pedido.cs",
+              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Models\\Pedido.cs",
+              "RelativeToolTip": "proyectoFinal\\Models\\Pedido.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwCsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T23:12:02.951Z"
+              "WhenOpened": "2025-06-30T20:26:31.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Venta.cs",
+              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Models\\Venta.cs",
+              "RelativeDocumentMoniker": "proyectoFinal\\Models\\Venta.cs",
+              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Models\\Venta.cs",
+              "RelativeToolTip": "proyectoFinal\\Models\\Venta.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAkwBYAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T20:26:13.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "VentaController.cs",
+              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\VentaController.cs",
+              "RelativeDocumentMoniker": "proyectoFinal\\Controllers\\VentaController.cs",
+              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\VentaController.cs",
+              "RelativeToolTip": "proyectoFinal\\Controllers\\VentaController.cs",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAowN0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T20:25:50.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PedidoController.cs",
+              "DocumentMoniker": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\PedidoController.cs",
+              "RelativeDocumentMoniker": "proyectoFinal\\Controllers\\PedidoController.cs",
+              "ToolTip": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\Controllers\\PedidoController.cs",
+              "RelativeToolTip": "proyectoFinal\\Controllers\\PedidoController.cs",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAowJEAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T20:25:43.797Z",
+              "EditorCaption": ""
             }
           ]
         }

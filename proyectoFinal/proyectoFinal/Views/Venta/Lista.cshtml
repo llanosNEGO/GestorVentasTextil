@@ -33,7 +33,7 @@
                 <td>@venta.cliente?.nombreCliente</td>
                 <td>@venta.total.ToString("0.00")</td>
                 <td>@venta.medioPago?.nombre</td>
-                <td>@(venta.estado ? "Activa" : "Anulada")</td>
+                <td>@venta.estado </td>
                 <td>
                     <a asp-action="Detalle" asp-controller="Venta" asp-route-id="@venta.idVenta" class="btn btn-info btn-sm">
                         <i class="fas fa-eye"></i> Ver Detalle

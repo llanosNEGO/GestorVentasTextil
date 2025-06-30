@@ -1,0 +1,32 @@
+﻿@model proyectoFinal.ViewM.DetallePedidoVM
+@{
+    var productos = ViewBag.Productos as List<Producto>;
+}
+
+<tr>
+    <td>
+        <select asp-for="idProducto" class="form-control producto-select">
+            <option value="">Seleccione producto</option>
+            @foreach (var producto in productos)
+            {
+                <option value="@producto.IdProducto" data-precio="@producto.precioProducto">
+                    @producto.nombreProducto
+                </option>
+            }
+        </select>
+        <span asp-validation-for="idProducto" class="text-danger"></span>
+    </td>
+    <td>
+        <input asp-for="cantidad" class="form-control cantidad" min="1" />
+        <span asp-validation-for="cantidad" class="text-danger"></span>
+    </td>
+    <td>
+        <input asp-for="precioUnitario" class="form-control precio-unitario" readonly />
+    </td>
+    <td>
+        <input asp-for="subtotal" class="form-control subtotal" readonly />
+    </td>
+    <td>
+        <button type="button" class="btn btn-danger btn-remove">Eliminar</button>
+    </td>
+</tr>

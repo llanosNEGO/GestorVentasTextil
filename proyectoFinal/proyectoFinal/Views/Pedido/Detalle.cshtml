@@ -1,0 +1,145 @@
+﻿@model proyectoFinal.Models.Pedido
+
+@{
+    <style>
+        /* Estilos generales para el tema azul noche */
+
+
+        .card {
+            background-color: #0b2956; /* Azul más claro para las tarjetas */
+            color: #ffffff; /* Texto blanco */
+            border: 1px solid #3949ab;
+            border-radius: 0.5rem;
+        }
+
+        .card-header {
+            background-color: #0b2956; /* Azul un poco más oscuro para los encabezados */
+            color: #ffffff;
+            border-bottom: 1px solid #3949ab;
+        }
+
+        table {
+            background-color: #0b2956;
+            color: #ffffff;
+        }
+
+        thead {
+            background-color: #283593;
+        }
+
+        tr {
+            border-bottom: 1px solid #3949ab;
+        }
+
+        th, td {
+            color: #ffffff;
+        }
+
+        .btn-secondary {
+            background-color: #5c6bc0;
+            border-color: #5c6bc0;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #3949ab;
+            border-color: #3949ab;
+        }
+
+        .btn-danger {
+            background-color: #d32f2f;
+            border-color: #d32f2f;
+        }
+
+        .form-control {
+            background-color: #3949ab;
+            color: #ffffff;
+            border: 1px solid #5c6bc0;
+        }
+
+        .form-control:read-only {
+            background-color: #283593;
+        }
+
+        /* Estilos para los select */
+        .producto-select {
+            background-color: #3949ab;
+            color: #ffffff;
+        }
+
+        /* Estilos para validación */
+        .text-danger {
+            color: #ff8a80 !important;
+        }
+    </style>
+}
+
+<h1 class="mt-4">@ViewData["Title"]</h1>
+
+<div class="card">
+    <div class="card-header">
+        <h4>Información General</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">ID Venta:</dt>
+            <dd class="col-sm-9">@Model.idPedido</dd>
+
+            <dt class="col-sm-3">Fecha de Emision:</dt>
+            <dd class="col-sm-9">@Model.fechaPedido.ToString()</dd>
+
+            <dt class="col-sm-3">Fecha de Entrega:</dt>
+            <dd class="col-sm-9">@Model.fechaEntrega.ToString()</dd>
+
+            <dt class="col-sm-3">Cliente:</dt>
+            <dd class="col-sm-9">@Model.cliente?.nombreCliente</dd>
+
+            <dt class="col-sm-3">Direccion de Entrega:</dt>
+            <dd class="col-sm-9">@Model.direccionEntrega</dd>
+
+            <dt class="col-sm-3">Observaciones:</dt>
+            <dd class="col-sm-9">@Model.Comentario</dd>
+
+            <dt class="col-sm-3">Total:</dt>
+            <dd class="col-sm-9">@Model.subtotal.ToString("0.00")</dd>
+
+            <dt class="col-sm-3">Estado:</dt>
+            <dd class="col-sm-9">@Model.EstadoPedido</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="card mt-4">
+    <div class="card-header">
+        <h4>Productos Vendidos</h4>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var detalle in Model.detalles)
+                {
+                    <tr>
+                        <td>@detalle.producto?.nombreProducto</td>
+                        <td>@detalle.cantidad</td>
+                        <td>@detalle.precioUnitario.ToString("0.00")</td>
+                        <td>@detalle.subtotal.ToString("0.00")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Lista" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Volver a la lista
+    </a>
+</div>

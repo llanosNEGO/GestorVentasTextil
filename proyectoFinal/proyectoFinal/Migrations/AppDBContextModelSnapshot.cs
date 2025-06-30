@@ -155,6 +155,40 @@ namespace proyectoFinal.Migrations
                     b.ToTable("DetalleCompra", (string)null);
                 });
 
+            modelBuilder.Entity("proyectoFinal.Models.DetallePedido", b =>
+                {
+                    b.Property<int>("idDetallePedido")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("idDetallePedido"));
+
+                    b.Property<int>("cantidad")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idpedido")
+                        .HasColumnType("int");
+
+                    b.Property<int>("idproducto")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("precioUnitario")
+                        .HasPrecision(10, 2)
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<decimal>("subtotal")
+                        .HasPrecision(10, 2)
+                        .HasColumnType("decimal(10,2)");
+
+                    b.HasKey("idDetallePedido");
+
+                    b.HasIndex("idpedido");
+
+                    b.HasIndex("idproducto");
+
+                    b.ToTable("DetallePedido", (string)null);
+                });
+
             modelBuilder.Entity("proyectoFinal.Models.DetalleVenta", b =>
                 {
                     b.Property<int>("idDetalle")
@@ -245,6 +279,47 @@ namespace proyectoFinal.Migrations
                     b.HasKey("idMedioPago");
 
                     b.ToTable("MedioPago", (string)null);
+                });
+
+            modelBuilder.Entity("proyectoFinal.Models.Pedido", b =>
+                {
+                    b.Property<int>("idPedido")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("idPedido"));
+
+                    b.Property<string>("Comentario")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("EstadoPedido")
+                        .HasColumnType("int");
+
+                    b.Property<string>("direccionEntrega")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("fechaEntrega")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateOnly>("fechaPedido")
+                        .HasColumnType("date");
+
+                    b.Property<int?>("idcliente")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("subtotal")
+                        .HasPrecision(10, 2)
+                        .HasColumnType("decimal(10,2)");
+
+                    b.HasKey("idPedido");
+
+                    b.HasIndex("idcliente");
+
+                    b.ToTable("Pedido", (string)null);
                 });
 
             modelBuilder.Entity("proyectoFinal.Models.Producto", b =>
@@ -383,8 +458,11 @@ namespace proyectoFinal.Migrations
                     b.Property<int>("MedioPago")
                         .HasColumnType("int");
 
-                    b.Property<bool>("estado")
-                        .HasColumnType("bit");
+                    b.Property<int?>("Pedido")
+                        .HasColumnType("int");
+
+                    b.Property<int>("estado")
+                        .HasColumnType("int");
 
                     b.Property<DateOnly>("fecha_registro")
                         .HasColumnType("date");
@@ -393,6 +471,9 @@ namespace proyectoFinal.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("idMedioPago")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("idpedido")
                         .HasColumnType("int");
 
                     b.Property<decimal>("total")
@@ -404,6 +485,8 @@ namespace proyectoFinal.Migrations
                     b.HasIndex("idCliente");
 
                     b.HasIndex("idMedioPago");
+
+                    b.HasIndex("idpedido");
 
                     b.ToTable("Ventas");
                 });
@@ -446,6 +529,25 @@ namespace proyectoFinal.Migrations
                     b.Navigation("productos");
                 });
 
+            modelBuilder.Entity("proyectoFinal.Models.DetallePedido", b =>
+                {
+                    b.HasOne("proyectoFinal.Models.Pedido", "pedido")
+                        .WithMany("detalles")
+                        .HasForeignKey("idpedido")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("proyectoFinal.Models.Producto", "producto")
+                        .WithMany("detallePedidos")
+                        .HasForeignKey("idproducto")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("pedido");
+
+                    b.Navigation("producto");
+                });
+
             modelBuilder.Entity("proyectoFinal.Models.DetalleVenta", b =>
                 {
                     b.HasOne("proyectoFinal.Models.Producto", "Producto")
@@ -474,6 +576,16 @@ namespace proyectoFinal.Migrations
                         .IsRequired();
 
                     b.Navigation("producto");
+                });
+
+            modelBuilder.Entity("proyectoFinal.Models.Pedido", b =>
+                {
+                    b.HasOne("proyectoFinal.Models.Cliente", "cliente")
+                        .WithMany("pedidos")
+                        .HasForeignKey("idcliente")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.Navigation("cliente");
                 });
 
             modelBuilder.Entity("proyectoFinal.Models.Producto", b =>
@@ -512,9 +624,16 @@ namespace proyectoFinal.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("proyectoFinal.Models.Pedido", "pedido")
+                        .WithMany("ventas")
+                        .HasForeignKey("idpedido")
+                        .OnDelete(DeleteBehavior.NoAction);
+
                     b.Navigation("cliente");
 
                     b.Navigation("medioPago");
+
+                    b.Navigation("pedido");
                 });
 
             modelBuilder.Entity("proyectoFinal.Models.Categoria", b =>
@@ -524,6 +643,8 @@ namespace proyectoFinal.Migrations
 
             modelBuilder.Entity("proyectoFinal.Models.Cliente", b =>
                 {
+                    b.Navigation("pedidos");
+
                     b.Navigation("ventas");
                 });
 
@@ -539,9 +660,18 @@ namespace proyectoFinal.Migrations
                     b.Navigation("ventas");
                 });
 
+            modelBuilder.Entity("proyectoFinal.Models.Pedido", b =>
+                {
+                    b.Navigation("detalles");
+
+                    b.Navigation("ventas");
+                });
+
             modelBuilder.Entity("proyectoFinal.Models.Producto", b =>
                 {
                     b.Navigation("detalleCompras");
+
+                    b.Navigation("detallePedidos");
 
                     b.Navigation("detalleVentas");
 

@@ -17,7 +17,24 @@ namespace proyectoFinal.Controllers
         public LoginController(AppDBContext dbContext)
         {
             _dbContext = dbContext;
+            InitializeRoles().Wait();
         }
+        private async Task InitializeRoles()
+        {
+            // Verificar si ya existen roles para evitar duplicados
+            if (!await _dbContext.Rol.AnyAsync())
+            {
+                var roles = new List<Rol>
+                {
+                    new Rol { nombreRol = "Administrador" , descripcion = "Acceso Total"} ,
+                    new Rol { nombreRol = "Usuario" , descripcion ="Acceso Limitado"}
+                };
+
+                await _dbContext.Rol.AddRangeAsync(roles);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
+
 
         [HttpGet]
         public IActionResult Registrarse()
@@ -37,13 +54,22 @@ namespace proyectoFinal.Controllers
                 return View(usuario);
             }
 
+            var rolUsuario = await _dbContext.Rol.FirstOrDefaultAsync(r => r.nombreRol == "Administrador");
+
+            if (rolUsuario == null)
+            {
+                ViewData["Mensaje"] = "Error en el sistema al traer Roles";
+                Console.WriteLine("Error al cargar los Roles");
+                return View(usuario);
+            }
+
             Usuario usuario1 = new Usuario()
             {
                 nombreUsuario = usuario.nombreUsuario,
                 email = usuario.email,
                 password = usuario.password,
                 fecha_registro = usuario.fecha_registro,
-                idRol=2
+                idRol=rolUsuario.idRol
             };
 
             //Guarda Usuario en DB
@@ -83,7 +109,7 @@ namespace proyectoFinal.Controllers
                 ViewData["Mensaje"] = "Por favor complete todos los campos requeridos correctamente";
                 return View(usuario);
             }
-            var usuarioEncontrado = await _dbContext.Usuarios.FirstOrDefaultAsync(a => a.nombreUsuario == usuario.nombreUsuario &&
+            var usuarioEncontrado = await _dbContext.Usuarios.FirstOrDefaultAsync(a => a.email == usuario.email &&
                 a.password == usuario.password);
 
             if(usuarioEncontrado == null)
@@ -95,7 +121,7 @@ namespace proyectoFinal.Controllers
 
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, usuarioEncontrado.nombreUsuario),
+                new Claim(ClaimTypes.Email, usuarioEncontrado.email),
                 new Claim(ClaimTypes.NameIdentifier, usuarioEncontrado.idUsuario.ToString()),
                 new Claim(ClaimTypes.Role, usuarioEncontrado.idRol.ToString())
             };

@@ -36,7 +36,7 @@ namespace proyectoFinal.Controllers
             {
                 // Limpiar validación para propiedades de navegación
                 ModelState.Remove("ventas");
-
+                ModelState.Remove("pedidos");
                 if (!ModelState.IsValid)
                 {
                     Console.WriteLine("=== ERRORES DE VALIDACIÓN ===");

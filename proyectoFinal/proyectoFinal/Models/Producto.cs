@@ -28,5 +28,6 @@ namespace proyectoFinal.Models
         public ICollection<Inventario> inventario { get; set; }
         public ICollection<DetalleCompra> detalleCompras { get; set; }
         public ICollection<DetalleVenta> detalleVentas { get; set; }
+        public ICollection<DetallePedido> detallePedidos { get; set; }
     }
 }
