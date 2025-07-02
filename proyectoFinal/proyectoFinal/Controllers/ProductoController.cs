@@ -13,7 +13,37 @@ namespace proyectoFinal.Controllers
         public ProductoController(AppDBContext appDBContext)
         {
             _dbContext = appDBContext;
+            InicializarMedioPago().Wait();
+            InicializarCategorias().Wait();
         }
+
+        private async Task InicializarMedioPago()
+        {
+            if (!await _dbContext.MedioPagos.AnyAsync())
+            {
+                var mediopago = new List<MedioPago>
+                {
+                    new MedioPago { nombre = "Efectivo" },
+                    new MedioPago { nombre = "Yape" }
+                };
+                await _dbContext.MedioPagos.AddRangeAsync(mediopago);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
+        private async Task InicializarCategorias()
+        {
+            if(! await _dbContext.Categorias.AnyAsync())
+            {
+                var categorias = new List<Categoria>
+                {
+                    new Categoria {nombreCategoria = "Sintetico", descripcion ="Material mas barato" },
+                    new Categoria {nombreCategoria ="Algodon" , descripcion="Material de algodon"}
+                };
+                await _dbContext.Categorias.AddRangeAsync(categorias);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
+
         [HttpGet]
 
         public async Task<IActionResult> Lista()

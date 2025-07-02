@@ -56,47 +56,68 @@ namespace proyectoFinal.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Nuevo()
+        public async Task<IActionResult> Nuevo(int? idPedido = null)
         {
             try
             {
-                //Cargar datos necesarios para los dropdowns
+                // Cargar datos necesarios para los dropdowns
                 var clientes = await _dbContext.Clientes.AsNoTracking().ToListAsync();
                 var mediopago = await _dbContext.MedioPagos.AsNoTracking().ToListAsync();
                 var productos = await _dbContext.Productos.AsNoTracking().ToListAsync();
 
-                // Validar que existan datos necesarios
-                if (!clientes.Any())
+                if (idPedido.HasValue && idPedido <= 0)
                 {
-                    Console.WriteLine("Error al cargar cliente");
-                    TempData["Error"] = "Debe existir al menos un cliente, medio de pago y producto activo";
+                    TempData["Error"] = "ID de pedido inválido";
                     return RedirectToAction(nameof(Lista));
                 }
-                if (!mediopago.Any())
-                {
-                    Console.WriteLine("Error al cargar medio de pago");
-                    TempData["Error"] = "Debe existir al menos un cliente, medio de pago y producto activo";
-                    return RedirectToAction(nameof(Lista));
-                }
-                if (!productos.Any())
-                {
-                    Console.WriteLine("Error al cargar productos");
-                    TempData["Error"] = "Debe existir al menos un cliente, medio de pago y producto activo";
 
+                // Validar que existan datos necesarios
+                if (!clientes.Any() || !mediopago.Any() || !productos.Any())
+                {
+                    Console.WriteLine("Debe existir al menos un cliente, medio de pago y producto activo");
+                    TempData["Error"] = "Debe existir al menos un cliente, medio de pago y producto activo";
                     return RedirectToAction(nameof(Lista));
                 }
+
+                // Cargar pedidos disponibles (solo aprobados sin venta asociada)
+                var pedidosDisponibles = await _dbContext.Pedidos
+                    .Include(p => p.cliente)
+                    .Where(p => p.EstadoPedido == Pedido.estadoPedido.Pendiente &&
+                                !p.ventas.Any() &&
+                                p.idPedido > 0) 
+                    .OrderByDescending(p => p.idPedido) // Ordenar por ID descendente
+                    .Select(p => new {
+                        p.idPedido,
+                        DisplayText = $"Pedido #{p.idPedido} - {p.cliente.nombreCliente} - {p.fechaPedido.ToShortDateString()}"
+                    })
+                    .ToListAsync();
+
                 // Preparar ViewBags para los selects
                 ViewBag.Productos = productos;
-                ViewBag.Clientes = new SelectList(await _dbContext.Clientes.AsNoTracking().ToListAsync(), "idCliente", "nombreCliente");
-                ViewBag.MediosPago = new SelectList(await _dbContext.MedioPagos.AsNoTracking().ToListAsync(), "idMedioPago", "nombre");
+                ViewBag.Clientes = new SelectList(clientes, "idCliente", "nombreCliente");
+                ViewBag.MediosPago = new SelectList(mediopago, "idMedioPago", "nombre");
+                ViewBag.PedidosDisponibles = new SelectList(pedidosDisponibles, "idPedido", "DisplayText");
+
                 // Inicializar modelo con fecha actual
                 var model = new VentaVM
                 {
-                    fecha_registro = DateOnly.FromDateTime(DateTime.Now),
-                    Detalles = new List<DetalleVM>() { new DetalleVM() }
+                    fecha_registro = DateTime.Now,
+                    Detalles = new List<DetalleVM>() { new DetalleVM() },
+                    PedidosDisponibles = new SelectList(pedidosDisponibles, "idPedido", "DisplayText")
                 };
-                return View(model);
 
+                // Si se proporcionó un idPedido, cargar sus datos
+                if (idPedido.HasValue)
+                {
+                    await CargarDatosPedido(model, idPedido.Value);
+                }
+                else
+                {
+                    // Agregar una fila vacía por defecto
+                    model.Detalles.Add(new DetalleVM());
+                }
+
+                return View(model);
             }
             catch (Exception ex)
             {
@@ -106,7 +127,109 @@ namespace proyectoFinal.Controllers
             }
         }
 
+        private async Task CargarDatosPedido(VentaVM model, int idPedido)
+        {
+            var pedido = await _dbContext.Pedidos
+                .Include(p => p.cliente)
+                .Include(p => p.detalles)
+                    .ThenInclude(d => d.producto)
+                .FirstOrDefaultAsync(p => p.idPedido == idPedido);
 
+            if (pedido != null)
+            {
+                model.SelectedPedidoId = pedido.idPedido;
+                model.idCliente = pedido.idcliente ?? 0;
+                model.PedidoClienteNombre = pedido.cliente?.nombreCliente;
+                model.PedidoSubtotal = pedido.subtotal;
+                model.PedidoFecha = pedido.fechaPedido;
+                model.PedidoDireccion = pedido.direccionEntrega;
+
+                // Mapear detalles del pedido a detalles de venta
+                model.Detalles = pedido.detalles.Select(d => new DetalleVM
+                {
+                    idProducto = d.idproducto,
+                    nombreProducto = d.producto?.nombreProducto,
+                    cantidad = d.cantidad,
+                    precio_unitario = d.precio_unitario,
+                    // subtotal se calcula automáticamente
+                }).ToList();
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetPedidoInfo(int id)
+        {
+            // Validación reforzada
+            if (id <= 0)
+            {
+                Console.WriteLine($"ID de pedido inválido recibido: {id}");
+                return Json(new
+                {
+                    success = false,
+                    message = $"ID de pedido inválido recibido: {id}"
+                });
+            }
+
+            try
+            {
+                // Consulta optimizada
+                var pedido = await _dbContext.Pedidos
+                    .AsNoTracking()
+                    .Include(p => p.cliente)
+                    .Include(p => p.detalles)
+                        .ThenInclude(d => d.producto)
+                    .Where(p => p.idPedido == id && p.EstadoPedido == Pedido.estadoPedido.Pendiente)
+                    .Select(p => new {
+                        p.idPedido,
+                        p.idcliente,
+                        clienteNombre = p.cliente.nombreCliente,
+                        p.fechaPedido,
+                        p.direccionEntrega,
+                        p.subtotal,
+                        detalles = p.detalles.Select(d => new {
+                            d.idproducto,
+                            nombreProducto = d.producto.nombreProducto,
+                            d.cantidad,
+                            d.precio_unitario,
+                            d.subtotal
+                        })
+                    })
+                    .FirstOrDefaultAsync();
+
+                if (pedido == null)
+                {
+                    Console.WriteLine($"Pedido {id} no encontrado o no está pendiente");
+                    return Json(new
+                    {
+                        success = false,
+                        message = "Pedido no encontrado o no está pendiente"
+                    });
+                }
+
+                Console.WriteLine($"Pedido {id} cargado correctamente");
+
+                return Json(new
+                {
+                    success = true,
+                    idPedido = pedido.idPedido,
+                    idCliente = pedido.idcliente,
+                    clienteNombre = pedido.clienteNombre,
+                    subtotal = pedido.subtotal,
+                    fechaPedido = pedido.fechaPedido.ToString("yyyy-MM-dd"),
+                    direccionEntrega = pedido.direccionEntrega,
+                    detalles = pedido.detalles
+                });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{ex} : Error al obtener pedido {id}");
+                return Json(new
+                {
+                    success = false,
+                    message = "Error interno del servidor"
+                });
+            }
+        }
 
 
 
@@ -142,6 +265,24 @@ namespace proyectoFinal.Controllers
             {
                 // Limpiar ModelState para propiedades de navegación
                 ModelState.Remove("Detalles");
+                ModelState.Remove("PedidosDisponibles");
+
+                if (model.SelectedPedidoId.HasValue)
+                {
+                    var pedido = await _dbContext.Pedidos.
+                        Include(p => p.ventas)
+                        .FirstOrDefaultAsync(p => p.idPedido == model.SelectedPedidoId);
+                    if (pedido == null)
+                    {
+                        ModelState.AddModelError("SelectedPedidoId", "El pedido seleccionado no existe");
+                        Console.WriteLine("Error al cargar el Pedido seleccionado");
+                    }
+                    else if (pedido.ventas.Any())
+                    {
+                        ModelState.AddModelError("SelectedPedidoId", "Este pedido ya tiene una venta asociada");
+                    }
+                }
+
 
                 if (ModelState.IsValid && model.Detalles != null && model.Detalles.Any())
                 {
@@ -173,8 +314,13 @@ namespace proyectoFinal.Controllers
                                 if (producto == null)
                                 {
                                     throw new Exception($"Produto con ID {detallevm.idProducto} no encontrado");
-                                }
-                                ;
+                                };
+
+                                if(producto.stock < detallevm.cantidad)
+                                {
+                                    throw new Exception($"Stock insuficiente para el producto {producto.nombreProducto}");
+                                };
+
                                 var detalle = new DetalleVenta
                                 {
                                     idProducto = detallevm.idProducto,
@@ -215,6 +361,16 @@ namespace proyectoFinal.Controllers
                 ViewBag.Clientes = new SelectList(await _dbContext.Clientes.AsNoTracking().ToListAsync(), "idCliente", "nombre");
                 ViewBag.MediosPago = new SelectList(await _dbContext.MedioPagos.AsNoTracking().ToListAsync(), "idMedioPago", "descripcion");
                 ViewBag.Productos = new SelectList(await _dbContext.Productos.AsNoTracking().ToListAsync(), "idProducto", "nombreProducto");
+
+                var pedidosDisponibles = await _dbContext.Pedidos
+                    .Include(p => p.cliente)
+                    .Where( p => p.EstadoPedido == Pedido.estadoPedido.Pendiente && !p.ventas.Any())
+                    .Select(p => new {
+                         p.idPedido,
+                         DisplayText = $"Pedido #{p.idPedido} - {p.cliente.nombreCliente} - {p.fechaPedido.ToShortDateString()}"
+                     })
+                    .ToListAsync();
+                model.PedidosDisponibles = new SelectList(pedidosDisponibles, "idPedido", "DisplayText");
 
                 return View(model);
             }

@@ -161,7 +161,7 @@ namespace proyectoFinal.Controllers
                                 {
                                     idproducto = detallevm.idProducto,
                                     cantidad = detallevm.cantidad,
-                                    precioUnitario = detallevm.precioUnitario,
+                                    precio_unitario = detallevm.precioUnitario,
                                     subtotal = detallevm.subtotal,
                                 };
 

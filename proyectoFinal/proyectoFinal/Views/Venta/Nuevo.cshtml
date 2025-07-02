@@ -1,8 +1,9 @@
 ﻿@model proyectoFinal.ViewM.VentaVM
-
 @{
     ViewData["Title"] = "Nueva Venta";
     var productos = ViewBag.Productos as List<Producto>;
+
+
 }
 
 <div class="form-container-enhanced">
@@ -11,9 +12,55 @@
     <form asp-action="Nuevo" id="ventaForm">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
+        <!-- Sección de selección de pedido -->
+        <div class="card mb-4 form-container-enhanced">
+            <div class="card-header bg-primary text-white">
+                <h5>Asociar a Pedido Existente</h5>
+            </div>
+            <div class="card-body">
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label">Seleccionar Pedido</label>
+                    <div class="col-md-9">
+                        <select asp-for="SelectedPedidoId" asp-items="Model.PedidosDisponibles"
+                                class="form-control select2" id="pedidoSelect">
+                            <option value="">-- Seleccionar pedido --</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="pedidoInfo" class="mt-3" style="display:none;">
+                    <div class="p-3 bg-info rounded">
+                        <!-- Fondo azul claro -->
+                        <h5 class="text-dark">Información del Pedido</h5> <!-- Título en oscuro -->
+                        <div class="row text-dark">
+                            <!-- Todo el texto en oscuro -->
+                            <div class="col-md-4">
+                                <p><strong>N° Pedido:</strong> <span id="pedidoNumero" class="font-weight-bold text-dark"></span></p>
+                            </div>
+                            <div class="col-md-4">
+                                <p><strong>Cliente:</strong> <span id="pedidoCliente" class="text-dark"></span></p>
+                            </div>
+                            <div class="col-md-4">
+                                <p><strong>Fecha:</strong> <span id="pedidoFecha" class="text-dark"></span></p>
+                            </div>
+                        </div>
+                        <div class="row text-dark">
+                            <div class="col-md-4">
+                                <p><strong>Total:</strong> <span id="pedidoTotal" class="text-dark"></span></p>
+                            </div>
+                            <div class="col-md-8">
+                                <p><strong>Dirección:</strong> <span id="pedidoDireccion" class="text-dark"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Información básica de la venta -->
         <div class="form-grid">
             <div class="form-group">
-                <label>Fecha de Registro</label>
+                <label> Fecha Registro</label>
                 <input type="date" asp-for="fecha_registro" class="form-fecha" readonly />
                 <span asp-validation-for="fecha_registro" class="text-danger"></span>
             </div>
@@ -21,20 +68,21 @@
             <div class="form-group">
                 <label>Cliente</label>
                 <select asp-for="idCliente" asp-items="@ViewBag.Clientes" class="form-control">
-                    <option value="">Seleccione un cliente</option>
+                    <option value="">-- Seleccionar cliente --</option>
                 </select>
                 <span asp-validation-for="idCliente" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label>Medio Pago</label>
+                <label>Medio de Pago</label>
                 <select asp-for="idMedioPago" asp-items="@ViewBag.MediosPago" class="form-control">
-                    <option value="">Seleccione medio de pago</option>
+                    <option value="">-- Seleccionar medio de pago --</option>
                 </select>
                 <span asp-validation-for="idMedioPago" class="text-danger"></span>
             </div>
         </div>
 
+        <!-- Detalles de la venta -->
         <h2 class="section-header">Detalles de Venta</h2>
         <table class="table-form" id="detallesTable">
             <thead>
@@ -47,111 +95,243 @@
                 </tr>
             </thead>
             <tbody>
-                @if (Model.Detalles != null && Model.Detalles.Count > 0)
-{
-
-                    @for (int i = 0; i < Model.Detalles.Count; i++)
-                    {
-                        <tr>
-                            <td>
-                                <select asp-for="Detalles[i].idProducto" class="form-control producto-select">
-                                    <option value="">Seleccione producto</option>
-                                    @foreach (var producto in productos)
-                                    {
-                                        <option value="@producto.IdProducto" data-precio="@producto.precioProducto">
-                                            @producto.nombreProducto
-                                        </option>
-                                    }
-                                </select>
-                                <span asp-validation-for="Detalles[i].idProducto" class="text-danger"></span>
-                            </td>
-                            <td>
-                                <input asp-for="Detalles[i].cantidad" class="form-control cantidad" />
-                                <span asp-validation-for="Detalles[i].cantidad" class="text-danger"></span>
-                            </td>
-                            <td>
-                                <input asp-for="Detalles[i].precio_unitario" class="form-fecha precio-unitario" readonly />
-                            </td>
-                            <td>
-                                <input asp-for="Detalles[i].subtotal" class="form-fecha subtotal" readonly />
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-danger btn-remove">Eliminar</button>
-                            </td>
-                        </tr>
-                    }
+                @for (int i = 0; i < Model.Detalles.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            <select asp-for="Detalles[i].idProducto" class="form-control producto-select">
+                                <option value="">-- Seleccionar producto --</option>
+                                @foreach (var producto in productos)
+                                {
+                                    <option value="@producto.IdProducto" data-precio="@producto.precioProducto"
+                                            selected="@(Model.Detalles[i].idProducto == producto.IdProducto)">
+                                        @producto.nombreProducto
+                                    </option>
+                                }
+                            </select>
+                            <span asp-validation-for="Detalles[i].idProducto" class="text-danger"></span>
+                        </td>
+                        <td>
+                            <input asp-for="Detalles[i].cantidad" class="form-control cantidad" />
+                            <span asp-validation-for="Detalles[i].cantidad" class="text-danger"></span>
+                        </td>
+                        <td>
+                            <input asp-for="Detalles[i].precio_unitario" class="form-fecha " readonly />
+                        </td>
+                        <td>
+                            <input asp-for="Detalles[i].subtotal" class="form-fecha" readonly />
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger btn-remove">Eliminar</button>
+                        </td>
+                    </tr>
                 }
             </tbody>
         </table>
+
         <div class="floating-action-btn">
-            <button type="button" id="addDetail" class="btn btn-primary"> Agregar Producto
+            <button type="button" id="addDetail" class="btn btn-primary">
+                Agregar Producto
             </button>
         </div>
 
         <div class="totals-section">
             <label>Total:</label>
-            <span class="totals-display" id="totalVenta">0.00</span>
+            <span class="totals-display" id="totalVenta">@Model.Detalles.Sum(d => d.subtotal).ToString("N2")</span>
         </div>
+
         <div class="action-buttons">
-            <a asp-action="Lista" class="btn btn-danger ">Cancelar</a>
+            <a asp-action="Lista" class="btn btn-danger">Cancelar</a>
             <button type="submit" class="btn btn-success">Guardar Venta</button>
         </div>
     </form>
 </div>
-
 @section Scripts {
     <script>
         $(document).ready(function() {
-            // Agregar nuevo detalle
-            $("#addDetail").click(function() {
+            // Configuración inicial
+            $('#pedidoSelect').val('');
+            actualizarTotal();
+            
+            // Inicializar selects de productos
+            $('.producto-select').each(function() {
+                if ($(this).val()) {
+                    $(this).trigger('change');
+                }
+            });
+
+            // Manejar cambio de pedido
+            $('#pedidoSelect').change(function() {
+                var rawValue = $(this).val();
+                console.log("Valor crudo recibido del select:", rawValue);
+
+                // Validación mejorada
+                if (!rawValue || rawValue === "" || rawValue === "0") {
+                    console.log("No hay pedido seleccionado o es inválido");
+                    resetearFormularioPedido();
+                    return;
+                }
+
+                var pedidoId = parseInt(rawValue);
+                if (isNaN(pedidoId) || pedidoId <= 0) {
+                    console.error("ID de pedido inválido:", rawValue);
+                    resetearFormularioPedido();
+                    return;
+                }
+
+                console.log("Procesando pedido ID:", pedidoId);
+                
+                // Mostrar carga
+                $('#pedidoInfo').html('<p>Cargando información...</p>').show();
+                var url = `/Venta/GetPedidoInfo?id=${pedidoId}`; 
+
+                console.log("Enviando solicitud a:", url);
+
                 $.ajax({
-                    url: '@Url.Action("ObtenerFilaDetalle")',
+                    url: url,
+                    type: 'GET',
+                    dataType: 'json',
                     success: function(data) {
-                        $("#detallesTable tbody").append(data);
-                        actualizarTotal();
+                        if (data.success) {
+                            cargarDatosPedido(data);
+                        } else {
+                            mostrarError(data.message || "Error al cargar pedido");
+                            resetearFormularioPedido();
+                        }
+                    },
+                    error: function() {
+                        mostrarError("Error de conexión");
+                        resetearFormularioPedido();
                     }
                 });
             });
 
-            // Eliminar detalle
+            // Resto de funciones...
+            $("#addDetail").click(function() {
+                agregarFilaDetalle();
+            });
+
             $(document).on("click", ".btn-remove", function() {
                 $(this).closest("tr").remove();
                 actualizarTotal();
+                reindexarFilas();
             });
 
-            // Cambio de producto
             $(document).on("change", ".producto-select", function() {
-                var productoId = $(this).val();
-                var $row = $(this).closest("tr");
-
-                if (productoId) {
-                    $.get('@Url.Action("ObtenerPrecioProducto")', { id: productoId }, function(data) {
-                        $row.find(".precio-unitario").val(data.precio);
-                        calcularSubtotal($row);
-                    });
-                }
+                actualizarPrecioProducto($(this).closest("tr"));
             });
 
-            // Cambio de cantidad
             $(document).on("change", ".cantidad", function() {
                 calcularSubtotal($(this).closest("tr"));
             });
-
-            function calcularSubtotal($row) {
-                var cantidad = parseFloat($row.find(".cantidad").val()) || 0;
-                var precio = parseFloat($row.find(".precio-unitario").val()) || 0;
-                var subtotal = cantidad * precio;
-                $row.find(".subtotal").val(subtotal.toFixed(2));
-                actualizarTotal();
-            }
-
-            function actualizarTotal() {
-                var total = 0;
-                $(".subtotal").each(function() {
-                    total += parseFloat($(this).val()) || 0;
-                });
-                $("#totalVenta").text(total.toFixed(2));
-            }
         });
+
+        // Funciones auxiliares
+        function resetearFormularioPedido() {
+            $('#pedidoSelect').val('');
+            $('#pedidoInfo').hide();
+            $('#idCliente').val('');
+            $('#detallesTable tbody').empty();
+            actualizarTotal();
+        }
+
+        function cargarDatosPedido(data) {
+            $('#pedidoInfo').html(`
+                <div class="form-container-enhanced">
+                    <h5>Pedido #${data.idPedido}</h5>
+                    <p><strong>Cliente:</strong> ${data.clienteNombre}</p>
+                    <p><strong>Fecha:</strong> ${data.fechaPedido}</p>
+                    <p><strong>Direccion Entrega:</strong> ${data.direccionEntrega}</p>
+                    <p><strong>Total:</strong> $${data.subtotal.toFixed(2)}</p>
+
+                </div>
+            `).show();
+
+            $('#idCliente').val(data.idCliente);
+            $('#detallesTable tbody').empty();
+
+            $.each(data.detalles, function(index, detalle) {
+                agregarFilaDetalle(detalle);
+            });
+
+            actualizarTotal();
+        }
+
+        function agregarFilaDetalle(detalle) {
+            var index = $('#detallesTable tbody tr').length;
+            var productoOptions = '@foreach (var producto in productos) { <option value="@producto.IdProducto" data-precio="@producto.precioProducto">@producto.nombreProducto</option> }';
+            
+            var newRow = `
+                <tr>
+                    <td>
+                        <select name="Detalles[${index}].idProducto" class="form-control producto-select">
+                            <option value="">-- Seleccionar --</option>
+                            ${productoOptions}
+                            ${detalle ? `<option value="${detalle.idProducto}" selected>${detalle.nombreProducto}</option>` : ''}
+                        </select>
+                    </td>
+                    <td>
+                        <input name="Detalles[${index}].cantidad" value="${detalle ? detalle.cantidad : 1}" 
+                               class="form-control cantidad" type="number" min="1" />
+                    </td>
+                    <td>
+                        <input name="Detalles[${index}].precio_unitario"
+                               value="${detalle ?  detalle.precio_unitario : ''}"
+                               class="form-fecha precio-unitario" readonly />
+                    </td>
+                    <td>
+                        <input name="Detalles[${index}].subtotal"
+                               value="${detalle ? detalle.subtotal.toFixed(2) : ''}"
+                               class="form-fecha subtotal" readonly />
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-remove">Eliminar</button>
+                    </td>
+                </tr>`;
+                
+            $('#detallesTable tbody').append(newRow);
+            
+            if (detalle) {
+                 var $row = $('#detallesTable tbody tr').last();
+                 $row.find('.producto-select').trigger('change');
+            }
+        }
+
+        function actualizarPrecioProducto($row) {
+            var selectedOption = $row.find('.producto-select option:selected');
+            var precio = selectedOption.data('precio') || 0;
+            $row.find('.precio-unitario').val(precio);
+            calcularSubtotal($row);
+        }
+
+        function calcularSubtotal($row) {
+            var cantidad = parseFloat($row.find('.cantidad').val()) || 0;
+            var precio = parseFloat($row.find('.precio-unitario').val()) || 0;
+            var subtotal = cantidad * precio;
+            $row.find('.subtotal').val(subtotal.toFixed(2));
+            actualizarTotal();
+        }
+
+        function actualizarTotal() {
+            var total = 0;
+            $('.subtotal').each(function() {
+                total += parseFloat($(this).val()) || 0;
+            });
+            $('#totalVenta').text(total.toFixed(2));
+        }
+
+        function reindexarFilas() {
+            $('#detallesTable tbody tr').each(function(index) {
+                $(this).find('[name]').each(function() {
+                    var name = $(this).attr('name').replace(/\[\d+\]/, `[${index}]`);
+                    $(this).attr('name', name);
+                });
+            });
+        }
+
+        function mostrarError(mensaje) {
+            alert(mensaje);
+            console.error(mensaje);
+        }
     </script>
 }

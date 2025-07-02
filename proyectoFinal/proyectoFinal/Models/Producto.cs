@@ -17,7 +17,7 @@ namespace proyectoFinal.Models
         public int stock { get; set; }
 
         [StringLength (255)]
-        public string ImagenUrl { get; set; } = "https://static.vecteezy.com/system/resources/previews/004/141/669/large_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg"; // Default image URL
+        public string ImagenUrl { get; set; } = "https://www.shutterstock.com/image-vector/no-photo-available-vector-icon-260nw-2082597646.jpg"; // Default image URL
 
         //FK
 

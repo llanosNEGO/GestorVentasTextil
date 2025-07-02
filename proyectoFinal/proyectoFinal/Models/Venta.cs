@@ -9,7 +9,7 @@ namespace proyectoFinal.Models
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int idVenta { get; set; }
         [Required]
-        public DateOnly fecha_registro { get; set; }
+        public DateTime fecha_registro { get; set; }
         [Required, Precision(5,2)]
         public decimal total {  get; set; }
         public enum estadoventa

@@ -197,7 +197,7 @@ a {
     }
 
 .form-control {
-    background-color: rgba(233, 241, 255, 0.1);
+    background-color: transparent;
     border: 1px solid #495057;
     color: #ffffff;
     transition: all 0.3s ease;

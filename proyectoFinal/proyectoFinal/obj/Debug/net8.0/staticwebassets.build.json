@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kZHZuQHNXVjtNIdw7izZAdUQrXQEfyFrePwDG4ssfn8=",
+  "Hash": "obl8UyAxbNEcMC45fIzf4WtWAW3adQem/6BjyP9MvYQ=",
   "Source": "proyectoFinal",
   "BasePath": "_content/proyectoFinal",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "lowbqbhhy8",
-      "Integrity": "NTBMMLI1n41sL4+3cGfe6bAghhfcJzpcAP904LOpjSE=",
+      "Fingerprint": "2r7dlzf0zs",
+      "Integrity": "fvm8KfAao+18ZJgdUX/ROPpMMK2oBfib8kYglruQbCQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1342,6 +1342,51 @@
   ],
   "Endpoints": [
     {
+      "Route": "css/site.2r7dlzf0zs.css",
+      "AssetFile": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7588"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fvm8KfAao+18ZJgdUX/ROPpMMK2oBfib8kYglruQbCQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Jul 2025 05:53:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2r7dlzf0zs"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fvm8KfAao+18ZJgdUX/ROPpMMK2oBfib8kYglruQbCQ="
+        }
+      ]
+    },
+    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1352,7 +1397,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7601"
+          "Value": "7588"
         },
         {
           "Name": "Content-Type",
@@ -1360,11 +1405,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"NTBMMLI1n41sL4+3cGfe6bAghhfcJzpcAP904LOpjSE=\""
+          "Value": "\"fvm8KfAao+18ZJgdUX/ROPpMMK2oBfib8kYglruQbCQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 12:32:51 GMT"
+          "Value": "Tue, 01 Jul 2025 05:53:12 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1374,52 +1419,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-NTBMMLI1n41sL4+3cGfe6bAghhfcJzpcAP904LOpjSE="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.lowbqbhhy8.css",
-      "AssetFile": "C:\\Users\\Abed\\OneDrive\\Documentos\\UPN\\Soluciones y arquitectura\\proyectoFinal\\proyectoFinal\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7601"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"NTBMMLI1n41sL4+3cGfe6bAghhfcJzpcAP904LOpjSE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 12:32:51 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "lowbqbhhy8"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-NTBMMLI1n41sL4+3cGfe6bAghhfcJzpcAP904LOpjSE="
+          "Value": "sha256-fvm8KfAao+18ZJgdUX/ROPpMMK2oBfib8kYglruQbCQ="
         }
       ]
     },

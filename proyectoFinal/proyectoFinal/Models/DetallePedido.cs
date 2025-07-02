@@ -11,7 +11,7 @@ namespace proyectoFinal.Models
         [Required]
         public int cantidad { get; set; }
         [Required, Precision(10,2)]
-        public decimal precioUnitario { get; set; }
+        public decimal precio_unitario { get; set; }
         [Required, Precision(10,2)]
         public decimal subtotal { get; set; }
 
