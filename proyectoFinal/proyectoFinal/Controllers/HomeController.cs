@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using proyectoFinal.Models;
 using proyectoFinal.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace proyectoFinal.Controllers
 {
+    [Authorize(Roles = "Administrador, Usuario")]
     public class HomeController : Controller
     {
         private readonly AppDBContext _dbContext;

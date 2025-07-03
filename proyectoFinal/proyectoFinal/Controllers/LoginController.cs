@@ -1,144 +1,196 @@
-﻿using proyectoFinal.Data;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using proyectoFinal.Data;
 using proyectoFinal.Models;
 using proyectoFinal.ViewM;
-using Microsoft.EntityFrameworkCore;
-
-using Microsoft.AspNetCore.Mvc;
-using Azure.Core;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 
 namespace proyectoFinal.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         private readonly AppDBContext _dbContext;
+        
+
         public LoginController(AppDBContext dbContext)
         {
             _dbContext = dbContext;
             InitializeRoles().Wait();
+            InitialzeUsuario().Wait();
         }
+
         private async Task InitializeRoles()
         {
-            // Verificar si ya existen roles para evitar duplicados
             if (!await _dbContext.Rol.AnyAsync())
             {
                 var roles = new List<Rol>
                 {
-                    new Rol { nombreRol = "Administrador" , descripcion = "Acceso Total"} ,
-                    new Rol { nombreRol = "Usuario" , descripcion ="Acceso Limitado"}
+                    new Rol { nombreRol = "Administrador", descripcion = "Acceso Total" },
+                    new Rol { nombreRol = "Usuario", descripcion = "Acceso Limitado" },
+                    new Rol {nombreRol= "Cliente", descripcion="Acceso Limitado"}
                 };
 
                 await _dbContext.Rol.AddRangeAsync(roles);
                 await _dbContext.SaveChangesAsync();
             }
         }
-
+        private async Task InitialzeUsuario()
+        {
+            if(!await _dbContext.Usuarios.AnyAsync())
+            {
+                var usuario = new List<Usuario>
+                {
+                    new Usuario { nombreUsuario= "Abed", email="master@gmail.com", password="$2a$11$ftbwkevIm.kVrZCJtWwVFOnz8EICF6isvJeKp0ZIC.dCNM0t6ZHti", fecha_registro= DateTime.Now, idRol=1}
+                };
+                await _dbContext.Usuarios.AddRangeAsync(usuario);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
 
         [HttpGet]
         public IActionResult Registrarse()
         {
+            // Mostrar opciones de rol (solo si es necesario)
+            ViewBag.Roles = _dbContext.Rol.ToList();
             return View();
         }
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Registrarse(RegistroUsuarioVM usuario)
         {
-            if (usuario.password != usuario.confirmarpassword)
-            {
-                ViewData["Mensaje"] = "Contraseñas no coinciden!";
-                return View(usuario);
-            }
             if (!ModelState.IsValid)
             {
+                ViewBag.Roles = _dbContext.Rol.ToList();
                 return View(usuario);
             }
 
-            var rolUsuario = await _dbContext.Rol.FirstOrDefaultAsync(r => r.nombreRol == "Administrador");
+            if (usuario.password != usuario.confirmarpassword)
+            {
+                ViewBag.Roles = _dbContext.Rol.ToList();
+                ViewData["Mensaje"] = "Las contraseñas no coinciden!";
+                return View(usuario);
+            }
+
+            // Verificar si el email ya existe
+            if (await _dbContext.Usuarios.AnyAsync(u => u.email == usuario.email))
+            {
+                ViewBag.Roles = _dbContext.Rol.ToList();
+                ViewData["Mensaje"] = "Este correo electrónico ya está registrado.";
+                return View(usuario);
+            }
+
+            // Asignar rol por defecto (Usuario) si no se especifica
+            var rolUsuario = await _dbContext.Rol.FirstOrDefaultAsync(r =>
+                usuario.idRol !=0 ? r.idRol == usuario.idRol : r.nombreRol == "Usuario");
 
             if (rolUsuario == null)
             {
-                ViewData["Mensaje"] = "Error en el sistema al traer Roles";
-                Console.WriteLine("Error al cargar los Roles");
+                ViewBag.Roles = _dbContext.Rol.ToList();
+                ViewData["Mensaje"] = "Error al asignar rol de usuario.";
                 return View(usuario);
             }
 
-            Usuario usuario1 = new Usuario()
+            // Crear hash de la contraseña (IMPORTANTE para seguridad)
+            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(usuario.password);
+
+            Usuario nuevoUsuario = new Usuario()
             {
                 nombreUsuario = usuario.nombreUsuario,
                 email = usuario.email,
-                password = usuario.password,
-                fecha_registro = usuario.fecha_registro,
-                idRol=rolUsuario.idRol
+                password = hashedPassword, // Guardar el hash, no la contraseña en texto plano
+                fecha_registro = DateTime.Now,
+                idRol = rolUsuario.idRol
             };
 
-            //Guarda Usuario en DB
-            await _dbContext.Usuarios.AddAsync(usuario1);
+            await _dbContext.Usuarios.AddAsync(nuevoUsuario);
             await _dbContext.SaveChangesAsync();
 
-            // Verificacion de registro de usuario
-            if(usuario1.idUsuario != null)
-            {
-                TempData["SuccessMessage"] = "Registro exitoso";
-                return RedirectToAction("Login", "Login");
-            }
-            ViewData["Mensaje"] = "Hubo un error en el Registro";
-            return View(usuario1);
+            TempData["SuccessMessage"] = "Registro exitoso. Por favor inicie sesión.";
+            return RedirectToAction("Login");
         }
 
         [HttpGet]
-
         public IActionResult Login()
         {
+            // Cerrar sesión previa si existe
+            if (User.Identity.IsAuthenticated)
+            {
+                HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            }
             return View();
         }
 
         [HttpPost]
-
-        public async Task<IActionResult> Login (LoginUsuarioVM usuario)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginUsuarioVM usuario)
         {
             if (!ModelState.IsValid)
             {
-                var errors = ModelState.Values.SelectMany(v => v.Errors);
-                foreach (var error in errors)
-                {
-
-                    Console.WriteLine($"Error producido {error.ErrorMessage}");
-                }
-                Console.WriteLine("Error de Formulario");
-                ViewData["Mensaje"] = "Por favor complete todos los campos requeridos correctamente";
                 return View(usuario);
             }
-            var usuarioEncontrado = await _dbContext.Usuarios.FirstOrDefaultAsync(a => a.email == usuario.email &&
-                a.password == usuario.password);
 
-            if(usuarioEncontrado == null)
+            var usuarioEncontrado = await _dbContext.Usuarios
+                .Include(u => u.rol) // Incluir información del rol
+                .FirstOrDefaultAsync(u => u.email == usuario.email);
+
+            // Verificar usuario y contraseña con BCrypt
+            if (usuarioEncontrado == null ||
+                !BCrypt.Net.BCrypt.Verify(usuario.password, usuarioEncontrado.password))
             {
-                Console.Write("Datos Ingresados son Incorrectos");
-                ViewData["Mensaje"] = "Nombre o Contraseña son incorrectos";
-                return View(usuario); 
+                ViewData["Mensaje"] = "Credenciales incorrectas";
+                return View(usuario);
             }
 
+            // Configurar claims con información del usuario
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Email, usuarioEncontrado.email),
                 new Claim(ClaimTypes.NameIdentifier, usuarioEncontrado.idUsuario.ToString()),
-                new Claim(ClaimTypes.Role, usuarioEncontrado.idRol.ToString())
+                new Claim(ClaimTypes.Email, usuarioEncontrado.email),
+                new Claim(ClaimTypes.Name, usuarioEncontrado.nombreUsuario),
+                new Claim(ClaimTypes.Role, usuarioEncontrado.rol.nombreRol) // Usar el nombre del rol
             };
 
-            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var claimsIdentity = new ClaimsIdentity(
+                claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
             var authProperties = new AuthenticationProperties
             {
-                IsPersistent = false, // recordar
-                AllowRefresh = true
+                IsPersistent = usuario.recordar, // Opción "recordar sesión"
+                AllowRefresh = true,
+                ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(30) // Tiempo de sesión
             };
 
             await HttpContext.SignInAsync(
-                CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity),
+                authProperties);
+
+            // Redirigir según rol
+            if (usuarioEncontrado.rol.nombreRol == "Administrador")
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             return RedirectToAction("Index", "Home");
         }
 
+        [Authorize] // Solo usuarios autenticados pueden cerrar sesión
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login");
+        }
 
+        [AllowAnonymous]
+        [Route("Login/AccessDenied")]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
     }
 }

@@ -171,3 +171,4 @@ C:\Users\Abed\OneDrive\Documentos\UPN\Soluciones y arquitectura\proyectoFinal\pr
 C:\Users\Abed\OneDrive\Documentos\UPN\Soluciones y arquitectura\proyectoFinal\proyectoFinal\obj\Debug\net8.0\proyectoFinal.genruntimeconfig.cache
 C:\Users\Abed\OneDrive\Documentos\UPN\Soluciones y arquitectura\proyectoFinal\proyectoFinal\obj\Debug\net8.0\ref\proyectoFinal.dll
 C:\Users\Abed\OneDrive\Documentos\UPN\Soluciones y arquitectura\proyectoFinal\proyectoFinal\obj\Debug\net8.0\proyectoFinal.sourcelink.json
+C:\Users\Abed\OneDrive\Documentos\UPN\Soluciones y arquitectura\proyectoFinal\proyectoFinal\bin\Debug\net8.0\BCrypt.Net-Next.dll

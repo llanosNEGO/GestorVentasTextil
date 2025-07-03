@@ -6,9 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using proyectoFinal.ViewM;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 namespace proyectoFinal.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class VentaController : Controller
     {
         private readonly AppDBContext _dbContext;

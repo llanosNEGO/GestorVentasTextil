@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using proyectoFinal.ViewM;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace proyectoFinal.Controllers
 {
+    [Authorize(Roles = "Administrador, Usuario")]
     public class PedidoController : Controller
     {
         private readonly AppDBContext _dbContext;
@@ -204,8 +206,5 @@ namespace proyectoFinal.Controllers
             }
         }
 
-
-
- 
     }
 }

@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using proyectoFinal.ViewM;
+using Microsoft.AspNetCore.Authorization;
 
 namespace proyectoFinal.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class ClienteController : Controller
     {
         private readonly AppDBContext _appDBContext;

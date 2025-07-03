@@ -4,9 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 namespace proyectoFinal.Controllers
-{   
+{
+    [Authorize(Roles = "Administrador, Usuario")]
     public class ProductoController : Controller
     {
         private readonly AppDBContext _dbContext;

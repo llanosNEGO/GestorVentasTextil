@@ -5,17 +5,32 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using proyectoFinal.ViewM;
+using Microsoft.AspNetCore.Authorization;
 
 namespace proyectoFinal.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class CompraController : Controller
     {
         public readonly AppDBContext _dbContext;
         public CompraController(AppDBContext dbContext)
         {
             _dbContext = dbContext;
+            InicializarProveedor().Wait();
         }
-
+        private async Task InicializarProveedor()
+        {
+            if (!await _dbContext.Proveedores.AnyAsync())
+            {
+                var proveedor = new List<Proveedor>
+                {
+                    new Proveedor { nombreEmpresa = "Sydney Peru" },
+                    new Proveedor { nombreEmpresa = "H & M Peru" }
+                };
+                await _dbContext.Proveedores.AddRangeAsync(proveedor);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
         [HttpGet]
         public async Task<IActionResult> Lista()
         {

@@ -6,6 +6,7 @@
         public string email { get; set; }
         public string password { get; set; }
         public string confirmarpassword { get; set; }
-        public DateOnly fecha_registro { get; set; }
+        public DateTime fecha_registro { get; set; } = DateTime.Now;
+        public int idRol {  get; set; }
     }
 }

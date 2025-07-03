@@ -17,19 +17,9 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     .AddCookie(options =>
     {
         options.LoginPath = "/Login/Login";
-        options.ExpireTimeSpan = TimeSpan.FromDays(7); // Duración si el usuario elige "recordarme"
-        options.SlidingExpiration = true; // Renueva la cookie si está activa
-
-        // Solo activa la cookie persistente si tú la habilitas manualmente
-        options.Events = new CookieAuthenticationEvents
-        {
-            OnSigningIn = context =>
-            {
-                // No se guarda la cookie como persistente, así expira al cerrar navegador
-                context.Properties.IsPersistent = false;
-                return Task.CompletedTask;
-            }
-        };
+        options.AccessDeniedPath = "/Login/AccesoDenegado"; // asegúrate de tener esa vista
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+        options.SlidingExpiration = true;
     });
 
 

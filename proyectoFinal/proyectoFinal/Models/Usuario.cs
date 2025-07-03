@@ -11,10 +11,10 @@ namespace proyectoFinal.Models
         public string nombreUsuario { get; set; }
         [StringLength(50),Required]
         public string email {  get; set; }
-        [StringLength(50),Required]
+        [StringLength(100),Required]
         public string password { get; set; }
         [Required]
-        public DateOnly fecha_registro { get; set; }
+        public DateTime fecha_registro { get; set; }
 
         //FK
 

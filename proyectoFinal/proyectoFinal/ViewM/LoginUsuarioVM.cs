@@ -8,5 +8,7 @@ namespace proyectoFinal.ViewM
         public string email { get; set; }
 
         public string password { get; set; }
+        [Display(Name = "Recordar sesión")]
+        public bool recordar { get; set; }
     }
 }

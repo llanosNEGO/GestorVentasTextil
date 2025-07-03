@@ -3,9 +3,11 @@ using proyectoFinal.Models;
 using Microsoft.EntityFrameworkCore;
 
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace proyectoFinal.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class InventarioController : Controller
     {
         private readonly AppDBContext _dbContext;

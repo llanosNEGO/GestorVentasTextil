@@ -13,6 +13,9 @@ namespace proyectoFinal.Models
         public int telefono { get; set; }
         [StringLength(50), Required]
         public string email { get; set; }
+        [StringLength(100), Required]
+        public string password { get; set; }
+        public string Rol { get; set; } = "Cliente";
 
         //FK
 
