@@ -131,6 +131,7 @@ namespace proyectoFinal.Controllers
         {
             if (!ModelState.IsValid)
             {
+                ViewData["Mensaje"] = "Credenciales incorrectas";
                 return View(usuario);
             }
 

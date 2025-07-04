@@ -62,10 +62,7 @@ namespace proyectoFinal.Controllers
         {
             try
             {
-                // Cargar datos necesarios para los dropdowns
-                var clientes = await _dbContext.Clientes.AsNoTracking().ToListAsync();
-                var mediopago = await _dbContext.MedioPagos.AsNoTracking().ToListAsync();
-                var productos = await _dbContext.Productos.AsNoTracking().ToListAsync();
+                
 
                 if (idPedido.HasValue && idPedido <= 0)
                 {
@@ -73,50 +70,37 @@ namespace proyectoFinal.Controllers
                     return RedirectToAction(nameof(Lista));
                 }
 
-                // Validar que existan datos necesarios
-                if (!clientes.Any() || !mediopago.Any() || !productos.Any())
-                {
-                    Console.WriteLine("Debe existir al menos un cliente, medio de pago y producto activo");
-                    TempData["Error"] = "Debe existir al menos un cliente, medio de pago y producto activo";
-                    return RedirectToAction(nameof(Lista));
-                }
-
-                // Cargar pedidos disponibles (solo aprobados sin venta asociada)
-                var pedidosDisponibles = await _dbContext.Pedidos
-                    .Include(p => p.cliente)
-                    .Where(p => p.EstadoPedido == Pedido.estadoPedido.Pendiente &&
-                                !p.ventas.Any() &&
-                                p.idPedido > 0) 
-                    .OrderByDescending(p => p.idPedido) // Ordenar por ID descendente
-                    .Select(p => new {
-                        p.idPedido,
-                        DisplayText = $"Pedido #{p.idPedido} - {p.cliente.nombreCliente} - {p.fechaPedido.ToShortDateString()}"
-                    })
-                    .ToListAsync();
-
-                // Preparar ViewBags para los selects
-                ViewBag.Productos = productos;
-                ViewBag.Clientes = new SelectList(clientes, "idCliente", "nombreCliente");
-                ViewBag.MediosPago = new SelectList(mediopago, "idMedioPago", "nombre");
-                ViewBag.PedidosDisponibles = new SelectList(pedidosDisponibles, "idPedido", "DisplayText");
 
                 // Inicializar modelo con fecha actual
                 var model = new VentaVM
                 {
                     fecha_registro = DateTime.Now,
                     Detalles = new List<DetalleVM>() { new DetalleVM() },
-                    PedidosDisponibles = new SelectList(pedidosDisponibles, "idPedido", "DisplayText")
                 };
+                await InicializarViewBags(model, idPedido);
 
-                // Si se proporcionó un idPedido, cargar sus datos
+                var clientes = ViewBag.Clientes as SelectList;
+                var mediosPago = ViewBag.MediosPago as SelectList;
+
+                if (clientes?.Count() == 0 || mediosPago?.Count() == 0)
+                {
+                    TempData["Error"] = "Debe existir al menos un cliente y medio de pago";
+                    return RedirectToAction(nameof(Lista));
+                }
+
+                // Si no hay pedido seleccionado, validar productos
+                if (!idPedido.HasValue)
+                {
+                    var productos = ViewBag.Productos as List<Producto>;
+                    if (productos?.Count == 0)
+                    {
+                        TempData["Error"] = "No hay productos disponibles";
+                        return RedirectToAction(nameof(Lista));
+                    }
+                }
                 if (idPedido.HasValue)
                 {
                     await CargarDatosPedido(model, idPedido.Value);
-                }
-                else
-                {
-                    // Agregar una fila vacía por defecto
-                    model.Detalles.Add(new DetalleVM());
                 }
 
                 return View(model);
@@ -310,18 +294,19 @@ namespace proyectoFinal.Controllers
                                 estado = Venta.estadoventa.Pendiente,
                                 detalles = new List<DetalleVenta>()
                             };
+
                             foreach (var detallevm in model.Detalles)
                             {
                                 var producto = await _dbContext.Productos.FindAsync(detallevm.idProducto);
                                 if (producto == null)
                                 {
-                                    throw new Exception($"Produto con ID {detallevm.idProducto} no encontrado");
-                                };
+                                    throw new Exception($"Producto con ID {detallevm.idProducto} no encontrado");
+                                }
 
-                                if(producto.stock < detallevm.cantidad)
+                                if (producto.stock < detallevm.cantidad)
                                 {
                                     throw new Exception($"Stock insuficiente para el producto {producto.nombreProducto}");
-                                };
+                                }
 
                                 var detalle = new DetalleVenta
                                 {
@@ -335,7 +320,6 @@ namespace proyectoFinal.Controllers
 
                                 //actualizar stock
                                 producto.stock -= detallevm.cantidad;
-                                //_dbContext.Productos.Add(producto);
                             }
 
                             _dbContext.Ventas.Add(venta);
@@ -359,20 +343,7 @@ namespace proyectoFinal.Controllers
                     ModelState.AddModelError("", "Debe agregar al menos un producto a la venta");
                     Console.WriteLine("Error al cargar los productos a la venta");
                 }
-                // Recargar datos necesarios si hay error
-                ViewBag.Clientes = new SelectList(await _dbContext.Clientes.AsNoTracking().ToListAsync(), "idCliente", "nombre");
-                ViewBag.MediosPago = new SelectList(await _dbContext.MedioPagos.AsNoTracking().ToListAsync(), "idMedioPago", "descripcion");
-                ViewBag.Productos = new SelectList(await _dbContext.Productos.AsNoTracking().ToListAsync(), "idProducto", "nombreProducto");
-
-                var pedidosDisponibles = await _dbContext.Pedidos
-                    .Include(p => p.cliente)
-                    .Where( p => p.EstadoPedido == Pedido.estadoPedido.Pendiente && !p.ventas.Any())
-                    .Select(p => new {
-                         p.idPedido,
-                         DisplayText = $"Pedido #{p.idPedido} - {p.cliente.nombreCliente} - {p.fechaPedido.ToShortDateString()}"
-                     })
-                    .ToListAsync();
-                model.PedidosDisponibles = new SelectList(pedidosDisponibles, "idPedido", "DisplayText");
+                await InicializarViewBags(model, model.SelectedPedidoId);
 
                 return View(model);
             }
@@ -383,6 +354,56 @@ namespace proyectoFinal.Controllers
                 return RedirectToAction(nameof(Lista));
             }
 
+        }
+        private async Task InicializarViewBags(VentaVM model, int? idPedido = null)
+        {
+            try
+            {
+                // Cargar datos necesarios para los dropdowns
+                var clientes = await _dbContext.Clientes.AsNoTracking().ToListAsync();
+                var mediopago = await _dbContext.MedioPagos.AsNoTracking().ToListAsync();
+
+                // Cargar productos solo si no hay pedido seleccionado
+                List<Producto> productos = new List<Producto>();
+                if (!idPedido.HasValue)
+                {
+                    productos = await _dbContext.Productos.AsNoTracking().ToListAsync();
+                }
+
+                // Cargar pedidos disponibles
+                var pedidosDisponibles = await _dbContext.Pedidos
+                    .Include(p => p.cliente)
+                    .Where(p => p.EstadoPedido == Pedido.estadoPedido.Pendiente &&
+                                !p.ventas.Any() &&
+                                p.idPedido > 0)
+                    .OrderByDescending(p => p.idPedido)
+                    .Select(p => new {
+                        p.idPedido,
+                        DisplayText = $"Pedido #{p.idPedido} - {p.cliente.nombreCliente} - {p.fechaPedido.ToShortDateString()}"
+                    })
+                    .ToListAsync();
+
+                // Configurar ViewBags de forma consistente
+                ViewBag.Productos = productos; // Mantener como List<Producto>
+                ViewBag.Clientes = new SelectList(clientes, "idCliente", "nombreCliente"); // Usar nombreCliente
+                ViewBag.MediosPago = new SelectList(mediopago, "idMedioPago", "nombre"); // Usar nombre
+                ViewBag.PedidosDisponibles = new SelectList(pedidosDisponibles, "idPedido", "DisplayText");
+                ViewBag.TienePedidoSeleccionado = idPedido.HasValue;
+
+                // Actualizar el modelo
+                model.PedidosDisponibles = new SelectList(pedidosDisponibles, "idPedido", "DisplayText");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al inicializar ViewBags: {ex.Message}");
+                // Inicializar con listas vacías para evitar nulls
+                ViewBag.Productos = new List<Producto>();
+                ViewBag.Clientes = new SelectList(new List<Cliente>(), "idCliente", "nombreCliente");
+                ViewBag.MediosPago = new SelectList(new List<MedioPago>(), "idMedioPago", "nombre");
+                ViewBag.PedidosDisponibles = new SelectList(new List<object>(), "idPedido", "DisplayText");
+                ViewBag.TienePedidoSeleccionado = false;
+                model.PedidosDisponibles = new SelectList(new List<object>(), "idPedido", "DisplayText");
+            }
         }
 
     }
