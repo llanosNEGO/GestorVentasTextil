@@ -18,7 +18,7 @@
 
 <p>
     <a asp-action="Agregar" asp-route-idProducto="@producto.IdProducto" class="btn btn-primary">
-        Agregar Nuevo Inventario
+        Nuevo Inventario
     </a>
     <a asp-action="Lista" asp-controller="Producto" class="btn btn-secondary">
         Volver a Productos
@@ -42,7 +42,6 @@
                 <td>@Html.DisplayFor(modelItem => item.color)</td>
                 <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
                 <td>
-                    <a asp-action="Editar" asp-route-id="@item.idInventario" class="btn btn-sm btn-warning">Editar</a>
                     <a asp-action="Eliminar" asp-route-id="@item.idInventario" class="btn btn-sm btn-danger">Eliminar</a>
                 </td>
             </tr>

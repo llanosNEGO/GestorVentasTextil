@@ -17,9 +17,9 @@ namespace proyectoFinal.ViewM
         public int cantidad { get; set; }
         public string color {  get; set; }
         public string talla { get; set; }
-        public decimal precioUnitario { get; set; }
+        public int precioUnitario { get; set; }
 
-        public decimal subtotal => cantidad * precioUnitario;
+        public int subtotal => cantidad * precioUnitario;
 
     }
 }

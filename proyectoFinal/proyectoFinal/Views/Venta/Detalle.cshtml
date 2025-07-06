@@ -1,6 +1,79 @@
 ﻿@model proyectoFinal.Models.Venta
 
+@{
 
+    <style>
+        /* Estilos generales para el tema azul noche */
+
+
+        .card {
+            background-color: #0b2956; /* Azul más claro para las tarjetas */
+            color: #ffffff; /* Texto blanco */
+            border: 1px solid #3949ab;
+            border-radius: 0.5rem;
+        }
+
+        .card-header {
+            background-color: #0b2956; /* Azul un poco más oscuro para los encabezados */
+            color: #ffffff;
+            border-bottom: 1px solid #3949ab;
+        }
+
+        table {
+            background-color: #0b2956;
+            color: #ffffff;
+        }
+
+        thead {
+            background-color: #283593;
+        }
+
+        tr {
+            border-bottom: 1px solid #3949ab;
+        }
+
+        th, td {
+            color: #ffffff;
+        }
+
+        .btn-secondary {
+            background-color: #5c6bc0;
+            border-color: #5c6bc0;
+            color: white;
+        }
+
+            .btn-secondary:hover {
+                background-color: #3949ab;
+                border-color: #3949ab;
+            }
+
+        .btn-danger {
+            background-color: #d32f2f;
+            border-color: #d32f2f;
+        }
+
+        .form-control {
+            background-color: #3949ab;
+            color: #ffffff;
+            border: 1px solid #5c6bc0;
+        }
+
+            .form-control:read-only {
+                background-color: #283593;
+            }
+
+        /* Estilos para los select */
+        .producto-select {
+            background-color: #3949ab;
+            color: #ffffff;
+        }
+
+        /* Estilos para validación */
+        .text-danger {
+            color: #ff8a80 !important;
+        }
+    </style>
+}
 
     <h1 class="mt-4">@ViewData["Title"]</h1>
 
@@ -23,7 +96,7 @@
                 <dd class="col-sm-9">@Model.medioPago?.nombre</dd>
 
                 <dt class="col-sm-3">Total:</dt>
-                <dd class="col-sm-9">@Model.total.ToString("0.00")</dd>
+                <dd class="col-sm-9">@Model.total</dd>
 
                 <dt class="col-sm-3">Estado:</dt>
                 <dd class="col-sm-9">@Model.estado </dd>
@@ -51,8 +124,8 @@
                         <tr>
                             <td>@detalle.Producto?.nombreProducto</td>
                             <td>@detalle.cantidad</td>
-                            <td>@detalle.precio_unitario.ToString("0.00")</td>
-                            <td>@detalle.subtotal.ToString("0.00")</td>
+                            <td>@detalle.precio_unitario</td>
+                            <td>@detalle.subtotal</td>
                         </tr>
                     }
                 </tbody>

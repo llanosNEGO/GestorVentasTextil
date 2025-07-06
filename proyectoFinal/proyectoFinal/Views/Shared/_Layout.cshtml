@@ -3,75 +3,123 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - proyectoFinal</title>
+    <title>@ViewData["Title"] - Pallay</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/proyectoFinal.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">proyectoFinal</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        @if (User.IsInRole("Administrador"))
-                        {
-
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Venta" asp-action="Lista">Ventas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Cliente" asp-action="Lista">Clientes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Compra" asp-action="Lista">Compras</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Lista">Productos</a>
-                            </li>
-                        }
-                        @if(User.IsInRole("Administrador")|| User.IsInRole("Usuario"))
-                        {
-
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Pedido" asp-action="Lista">Pedidos</a>
-                            </li>
-
-                        }
-
-                    </ul>
-                    <ul class="navbar-nav">
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <li class="nav-item">
-                                <span class="nav-link">Hola, @User.Identity.Name!</span>
-                            </li>
-                            <li class="nav-item">
-                                <form asp-controller="Login" asp-action="Logout" method="post" class="d-inline">
-                                    <button type="submit" class="btn btn-sm btn-link nav-link">Cerrar sesión</button>
-                                </form>
-                            </li>
-                        }
-                    </ul>
-                </div>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="active">
+            <div class="sidebar-header">
+                <h3>Pallay</h3>
+                <strong>PL</strong>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
+            <ul class="list-unstyled components">
+                @if (User.IsInRole("Administrador"))
+                {
+                    <li>
+                        <a href="#ventasSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <i class="fas fa-chart-line"></i>
+                            Operaciones
+                        </a>
+                        <ul class="collapse list-unstyled" id="ventasSubmenu">
+                            <li>
+                                <a asp-area="" asp-controller="Venta" asp-action="Lista">
+                                    <i class="fas  fa-chart-line"></i>
+                                    Ventas
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-area="" asp-controller="Compra" asp-action="Lista">
+                                    <i class="fas  fa-chart-line"></i>
+                                    Compras
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-area="" asp-controller="Pedido" asp-action="Lista">
+                                    <i class="fas fa-chart-line"></i>
+                                    Pedidos
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#catalogosSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                            <i class="fas fa-boxes"></i>
+                            Catálogos
+                        </a>
+                        <ul class="collapse list-unstyled" id="catalogosSubmenu">
+                            <li>
+                                <a asp-area="" asp-controller="Producto" asp-action="Lista">
+                                    <i class="fas fa-box-open"></i>
+                                    Productos
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-area="" asp-controller="Cliente" asp-action="Lista">
+                                    <i class="fas fa-users"></i>
+                                    Clientes
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                @if (User.IsInRole("Usuario"))
+                {
+                    <li>
+                        <a asp-area="" asp-controller="Pedido" asp-action="Lista">
+                            <i class="fas fa-clipboard-list"></i>
+                            Pedidos
+                        </a>
+                    </li>
+                }
+            </ul>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <ul class="list-unstyled user-section">
+                    <li>
+                        <div class="user-info">
+                            <i class="fas fa-user-circle"></i>
+                            <span>@User.Identity.Name</span>
+                        </div>
+                    </li>
+                    <li>
+                        <form asp-controller="Login" asp-action="Logout" method="post">
+                            <button type="submit" class="btn btn-logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Cerrar sesión
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            }
+        </nav>
+
+        <div id="content">
+
+            <div class="container-fluid">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

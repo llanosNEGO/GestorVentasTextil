@@ -53,6 +53,9 @@ main {
     margin-top: 1rem;
     color:white;
 }
+.btn{
+    color: white;
+}
 
 
 /* BUTTONS */
@@ -109,11 +112,14 @@ h1, h2, h3, h4, h5 {
 
 /* CUSTOM LINKS */
 a {
-    color: #0d6efd;
+    color: white;
+    margin: 12px 0;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
     a:hover {
-        color: #0b5ed7;
+        color: #d5dbdb;
         text-decoration: underline;
     }
 /* TABLES STYLES */

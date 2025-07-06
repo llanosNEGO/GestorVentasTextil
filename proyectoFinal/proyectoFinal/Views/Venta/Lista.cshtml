@@ -16,6 +16,7 @@
     <thead class="thead-dark">
         <tr>
             <th>ID</th>
+            <th>Pedido</th>
             <th>Fecha</th>
             <th>Cliente</th>
             <th>Total</th>
@@ -29,9 +30,10 @@
         {
             <tr>
                 <td>@venta.idVenta</td>
+                <td>@venta.idpedido</td>
                 <td>@venta.fecha_registro.ToString("dd/MM/yyyy")</td>
                 <td>@venta.cliente?.nombreCliente</td>
-                <td>@venta.total.ToString("0.00")</td>
+                <td>@venta.total</td>
                 <td>@venta.medioPago?.nombre</td>
                 <td>@venta.estado </td>
                 <td>

@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>2r7dlzf0zs</Fingerprint>
-      <Integrity>fvm8KfAao+18ZJgdUX/ROPpMMK2oBfib8kYglruQbCQ=</Integrity>
+      <Fingerprint>nvlwuii8rh</Fingerprint>
+      <Integrity>w7wHy8KKGt0hUysdkhDQEJZ5dHEGPFcYaBFE07A8RM4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</OriginalItemSpec>
@@ -1098,23 +1098,23 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\Pallay.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\proyectoFinal.y1vlfb05e2.bundle.scp.css'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\proyectoFinal.2vqblqzo2t.bundle.scp.css'))">
       <SourceType>Package</SourceType>
       <SourceId>proyectoFinal</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/proyectoFinal</BasePath>
-      <RelativePath>proyectoFinal.y1vlfb05e2.bundle.scp.css</RelativePath>
+      <RelativePath>proyectoFinal.2vqblqzo2t.bundle.scp.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>Reference</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ProjectBundle</AssetTraitValue>
-      <Fingerprint>y1vlfb05e2</Fingerprint>
-      <Integrity>irTdIl5tgxDlfUzpFqP2Gn0VHdU6BYac+jr/NVzGLJk=</Integrity>
+      <Fingerprint>2vqblqzo2t</Fingerprint>
+      <Integrity>vmkSqg6dcdBZofMVlGKIgVPmCUUoQqkWRkGcttQ597o=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\proyectoFinal.y1vlfb05e2.bundle.scp.css'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\proyectoFinal.2vqblqzo2t.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

@@ -15,8 +15,8 @@ namespace proyectoFinal.Models
         public DateTime fechaEntrega { get; set; }
         [Required, StringLength(50)]
         public string direccionEntrega { get; set; }
-        [Required, Precision(10,2)]
-        public decimal subtotal { get; set; }
+        [Required]
+        public int subtotal { get; set; }
         public enum estadoPedido
         {
             Pendiente,

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using proyectoFinal.Data;
 
@@ -11,9 +12,11 @@ using proyectoFinal.Data;
 namespace proyectoFinal.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    partial class AppDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250706081720_6")]
+    partial class _6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -138,8 +141,8 @@ namespace proyectoFinal.Migrations
                     b.Property<decimal>("precioUnitario")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("subtotal")
-                        .HasColumnType("int");
+                    b.Property<decimal>("subtotal")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("talla")
                         .IsRequired()
@@ -173,9 +176,11 @@ namespace proyectoFinal.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("precio_unitario")
+                        .HasPrecision(10, 2)
                         .HasColumnType("int");
 
                     b.Property<int>("subtotal")
+                        .HasPrecision(10, 2)
                         .HasColumnType("int");
 
                     b.HasKey("idDetallePedido");
@@ -309,8 +314,9 @@ namespace proyectoFinal.Migrations
                     b.Property<int?>("idcliente")
                         .HasColumnType("int");
 
-                    b.Property<int>("subtotal")
-                        .HasColumnType("int");
+                    b.Property<decimal>("subtotal")
+                        .HasPrecision(10, 2)
+                        .HasColumnType("decimal(10,2)");
 
                     b.HasKey("idPedido");
 

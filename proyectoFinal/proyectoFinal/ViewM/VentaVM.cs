@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using proyectoFinal.ViewM;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Http.HttpResults;
+using System.Text.Json.Serialization;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace proyectoFinal.ViewM
 {
@@ -16,14 +18,15 @@ namespace proyectoFinal.ViewM
 
 
         [Display(Name = "Pedido Asociado")]
+        [JsonIgnore] 
         public int? SelectedPedidoId { get; set; }
 
         public SelectList PedidosDisponibles { get; set; } = new SelectList(new List<SelectListItem>());
 
-        public string PedidoClienteNombre { get; set; }
+        public string clienteNombre { get; set; }
         public decimal? PedidoSubtotal { get; set; }
         public DateOnly? PedidoFecha { get; set; }
-        public string PedidoDireccion { get; set; }
+        public string direccionEntrega { get; set; }
 
         public List<DetalleVM> Detalles { get; set; } = new List<DetalleVM>();
     }
@@ -34,8 +37,8 @@ namespace proyectoFinal.ViewM
         public string nombreProducto { get; set; }
         public int cantidad { get; set; }
 
-        public decimal precio_unitario { get; set; }
+        public int precio_unitario { get; set; }
 
-        public decimal subtotal => cantidad * precio_unitario;
+        public int subtotal => cantidad * precio_unitario;
     }
 }

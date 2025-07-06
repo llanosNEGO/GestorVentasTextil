@@ -87,9 +87,9 @@ namespace proyectoFinal.Controllers
                 {
                     // Verificar que el producto exista
                     var productoExistente = await _dbContext.Productos
-                        .AnyAsync(p => p.IdProducto == inventario.idProducto);
+                        .FirstOrDefaultAsync(p => p.IdProducto == inventario.idProducto);
 
-                    if (!productoExistente)
+                    if (productoExistente == null)
                     {
                         TempData["Error"] = "Producto no válido";
                         return RedirectToAction("Lista", "Producto");
@@ -108,6 +108,12 @@ namespace proyectoFinal.Controllers
                     }
 
                     _dbContext.Inventarios.Add(inventario);
+
+                    // Actualizar el stock del producto
+                    productoExistente.stock = await _dbContext.Inventarios
+                        .Where(i => i.idProducto == inventario.idProducto)
+                        .SumAsync(i => i.Cantidad);
+
                     await _dbContext.SaveChangesAsync();
 
                     TempData["Exito"] = "Variación agregada al inventario correctamente";
@@ -134,5 +140,50 @@ namespace proyectoFinal.Controllers
                 return RedirectToAction("Lista", new { id = inventario.idProducto });
             }
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Eliminar(int? id)
+        {
+            if(id == null){ return NotFound(); }
+            var inventario = await _dbContext.Inventarios.FirstOrDefaultAsync(i => i.idInventario == id);
+
+            if(inventario == null) {
+                TempData["Error"] = " Error al eliminar Inventario";
+                Console.WriteLine("Error en el Id al intentar eliminar un Inventario");
+                return NotFound();
+            }
+            return View(inventario);
+        }
+
+
+
+        [HttpPost, ActionName("Eliminar")]
+        public async Task<IActionResult> EliminarConfirmado(int id)
+        {
+            try
+            {
+                var inventario = await _dbContext.Inventarios.FindAsync(id);
+                if(inventario == null) {
+                    ViewData["Error"] = "Error al intenar confirmar el Id de Inventario";
+                    Console.WriteLine("Error en confirmacion para eliminar el Inventario");
+                    return NotFound();
+                }
+
+                _dbContext.Inventarios.Remove(inventario);
+                await _dbContext.SaveChangesAsync();
+                TempData["Exito"] = "Inventario eliminado con exito";
+                Console.WriteLine("Eliminacion de Inventario exitoso");
+                return RedirectToAction(nameof(Lista));
+
+            }catch(Exception e)
+            {
+                Console.WriteLine($"Error al intentar elminar Inventario {e.Message}");
+                return RedirectToAction(nameof(Lista));
+
+            }
+        }
+
+
+
     }
 }

@@ -10,10 +10,10 @@ namespace proyectoFinal.Models
         public int idDetallePedido {  get; set; }
         [Required]
         public int cantidad { get; set; }
-        [Required, Precision(10,2)]
-        public decimal precio_unitario { get; set; }
-        [Required, Precision(10,2)]
-        public decimal subtotal { get; set; }
+        [Required]
+        public int precio_unitario { get; set; }
+        [Required]
+        public int subtotal { get; set; }
 
         //FK 
 

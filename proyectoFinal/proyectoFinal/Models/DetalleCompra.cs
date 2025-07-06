@@ -17,7 +17,7 @@ namespace proyectoFinal.Models
         public string talla { get; set; }
 
         [Required]
-        public decimal subtotal { get; set; }
+        public int subtotal { get; set; }
 
         //FK
         [ForeignKey("idCompras")]

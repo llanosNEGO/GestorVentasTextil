@@ -115,20 +115,31 @@ namespace proyectoFinal.Controllers
 
         private async Task CargarDatosPedido(VentaVM model, int idPedido)
         {
+            if (idPedido <= 0)
+            {
+                Console.WriteLine($"ID de pedido inválido en CargarDatosPedido: {idPedido}");
+                throw new ArgumentException("ID de pedido inválido");
+            }
             var pedido = await _dbContext.Pedidos
                 .Include(p => p.cliente)
                 .Include(p => p.detalles)
                     .ThenInclude(d => d.producto)
                 .FirstOrDefaultAsync(p => p.idPedido == idPedido);
 
+
+            if (pedido == null)
+            {
+                Console.WriteLine($"Pedido {idPedido} no encontrado o no está pendiente");
+                throw new Exception($"Pedido {idPedido} no encontrado o no está pendiente");
+            }
             if (pedido != null)
             {
                 model.SelectedPedidoId = pedido.idPedido;
                 model.idCliente = pedido.idcliente ?? 0;
-                model.PedidoClienteNombre = pedido.cliente?.nombreCliente;
+                model.clienteNombre = pedido.cliente?.nombreCliente;
                 model.PedidoSubtotal = pedido.subtotal;
                 model.PedidoFecha = pedido.fechaPedido;
-                model.PedidoDireccion = pedido.direccionEntrega;
+                model.direccionEntrega = pedido.direccionEntrega;
 
                 // Mapear detalles del pedido a detalles de venta
                 model.Detalles = pedido.detalles.Select(d => new DetalleVM
@@ -250,8 +261,38 @@ namespace proyectoFinal.Controllers
             try
             {
                 // Limpiar ModelState para propiedades de navegación
-                ModelState.Remove("Detalles");
-                ModelState.Remove("PedidosDisponibles");
+                ModelState.Remove("clienteNombre");
+                ModelState.Remove("direccionEntrega");
+                ModelState.Remove("PedidoSubtotal");
+                ModelState.Remove("PedidoFecha");
+
+                if (model.Detalles != null)
+                {
+                    for (int i = 0; i < model.Detalles.Count; i++)
+                    {
+                        ModelState.Remove($"Detalles[{i}].nombreProducto");
+                        ModelState.Remove($"Detalles[{i}].idProducto");
+                        ModelState.Remove($"Detalles[{i}].cantidad");
+                        ModelState.Remove($"Detalles[{i}].precio_unitario");
+                    }
+                }
+
+                if (!ModelState.IsValid)
+                {
+                    var errors = ModelState.Values.SelectMany(v => v.Errors)
+                                        .Select(e => e.ErrorMessage)
+                                        .ToList();
+                    Console.WriteLine($"Errores de validación: {string.Join(", ", errors)}");
+                    await InicializarViewBags(model, model.SelectedPedidoId);
+                    return View(model);
+                }
+                if (model.Detalles == null || !model.Detalles.Any())
+                {
+                    ModelState.AddModelError("", "Debe agregar al menos un producto a la venta");
+                    Console.WriteLine("Intento de crear venta sin detalles");
+                    await InicializarViewBags(model, model.SelectedPedidoId);
+                    return View(model);
+                }
 
                 if (model.SelectedPedidoId.HasValue)
                 {
@@ -291,9 +332,23 @@ namespace proyectoFinal.Controllers
                                 idCliente = model.idCliente,
                                 idMedioPago = model.idMedioPago,
                                 total = model.Detalles.Sum(d => d.subtotal),
-                                estado = Venta.estadoventa.Pendiente,
+                                estado = Venta.estadoventa.Completada,
                                 detalles = new List<DetalleVenta>()
                             };
+                            if (model.SelectedPedidoId.HasValue)
+                            {
+                                var pedido = await _dbContext.Pedidos
+                                    .FirstOrDefaultAsync(p => p.idPedido == model.SelectedPedidoId.Value);
+
+                                if (pedido != null)
+                                {
+                                    pedido.EstadoPedido = Pedido.estadoPedido.Enviado;
+                                    _dbContext.Pedidos.Update(pedido);
+
+                                    // Asociar la venta con el pedido
+                                    venta.idpedido = pedido.idPedido;
+                                }
+                            }
 
                             foreach (var detallevm in model.Detalles)
                             {
